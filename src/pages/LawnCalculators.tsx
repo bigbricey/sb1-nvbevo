@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Calculator } from 'lucide-react';
 import SEO from '../components/SEO';
 
@@ -20,6 +20,20 @@ const LawnCalculators: React.FC = () => {
       cubicYards: cubicYards.toFixed(2)
     };
   };
+
+  const memoizedCalculation = useMemo(() => {
+    return calculateSodArea();
+  }, [length, width]);
+
+  useEffect(() => {
+    const savedData = localStorage.getItem('calculatorData');
+    if (savedData) {
+      const { length, width, depth } = JSON.parse(savedData);
+      setLength(length);
+      setWidth(width);
+      setDepth(depth);
+    }
+  }, []);
 
   return (
     <>
@@ -103,7 +117,7 @@ const LawnCalculators: React.FC = () => {
               <h3 className="text-xl font-semibold text-green-800 mb-2">Result:</h3>
               {calculatorType === 'sod' ? (
                 <p className="text-green-700">
-                  You need approximately <strong>{calculateSodArea()} square feet</strong> of sod.
+                  You need approximately <strong>{memoizedCalculation} square feet</strong> of sod.
                 </p>
               ) : (
                 <div>
@@ -149,22 +163,8 @@ const LawnCalculators: React.FC = () => {
 
 export default LawnCalculators;
 
-const memoizedCalculation = useMemo(() => {
-  return calculateSodArea();
-}, [length, width]);
-
 // Add input validation
 const validateInput = (value: string) => {
   const num = parseFloat(value);
   return !isNaN(num) && num >= 0 && num <= 10000;
 };
-
-useEffect(() => {
-  const savedData = localStorage.getItem('calculatorData');
-  if (savedData) {
-    const { length, width, depth } = JSON.parse(savedData);
-    setLength(length);
-    setWidth(width);
-    setDepth(depth);
-  }
-}, []);
