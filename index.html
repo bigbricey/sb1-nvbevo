@@ -10,6 +10,79 @@
   </head>
   <body>
     <div id="root"></div>
+    <section>
+      <h1>Sod Installation in Jacksonville, FL</h1>
+      <p>Welcome to Jax Sod, your premier choice for sod installation in Jacksonville, FL. Our expert team specializes in transforming your lawn with high-quality St. Augustine Floratam sod, ensuring a lush and vibrant landscape.</p>
+      <h2>Why Choose Our Sod Services?</h2>
+      <p>We provide top-notch sod installation services tailored to meet the unique needs of your property. Our services include site preparation, sod delivery, and professional installation, all designed to give you a beautiful and sustainable lawn.</p>
+      <h2>Areas We Serve</h2>
+      <p>In addition to Jacksonville, we proudly serve the surrounding areas, including St. Augustine, Orange Park, and Ponte Vedra. Contact us today to learn more about our sod services and how we can enhance your outdoor space.</p>
+    </section>
+    <!-- Chat Bot Interface -->
+    <div id="chat-bot">
+      <div id="chat-window">
+        <div id="chat-output"></div>
+        <input type="text" id="chat-input" placeholder="Type your question here..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Simple Chat Bot Logic
+      const chatOutput = document.getElementById('chat-output');
+      const chatInput = document.getElementById('chat-input');
+      const sendBtn = document.getElementById('send-btn');
+
+      sendBtn.addEventListener('click', () => {
+        const userInput = chatInput.value;
+        chatOutput.innerHTML += '<div class="user-message">' + userInput + '</div>';
+        chatInput.value = '';
+
+        // Simple response logic
+        if (userInput.toLowerCase().includes('sod')) {
+          chatOutput.innerHTML += '<div class="bot-message">We offer premium sod installation services. How can I assist you further?</div>';
+        } else {
+          chatOutput.innerHTML += '<div class="bot-message">I am here to help with your sod installation questions!</div>';
+        }
+      });
+    </script>
+    <style>
+      /* Basic styles for chat bot */
+      #chat-bot {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+      }
+      #chat-window {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+      }
+      #chat-output {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px;
+      }
+      #chat-input {
+        border: 1px solid #ccc;
+        padding: 5px;
+        width: calc(100% - 60px);
+      }
+      #send-btn {
+        width: 50px;
+        padding: 5px;
+      }
+      .user-message {
+        text-align: right;
+        color: blue;
+      }
+      .bot-message {
+        text-align: left;
+        color: green;
+      }
+    </style>
   </body>
 </html>
