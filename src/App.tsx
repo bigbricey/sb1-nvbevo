@@ -17,8 +17,8 @@ function App() {
   return (
     <Router>
       <SEO 
-        title="Jax Sod | Professional Sod Installation in Northeast Florida"
-        description="Expert sod installation services in Jacksonville and Green Cove Springs. With over 37 years of experience, Jax Sod delivers premium quality sod and installation for homes and businesses."
+        title="Jax Sod | Professional Sod Installation Jacksonville FL | Grade-A Sod Services"
+        description="Jacksonville's #1 sod installation experts. Licensed, insured, Grade-A sod varieties for Florida lawns. Free estimates, serving Jacksonville & St. Augustine. Call (904) 901-1457"
       />
       <Navigation />
       <Routes>
