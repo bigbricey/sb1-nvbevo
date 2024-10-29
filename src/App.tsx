@@ -30,7 +30,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/location" element={<Location />} />
-        <Route path="/lawn-calculators" element={<LawnCalculators />} />
+        <Route path="/calculators" element={<LawnCalculators />} />
         <Route path="/sod-types" element={<SodTypes />} />
       </Routes>
     </Router>
