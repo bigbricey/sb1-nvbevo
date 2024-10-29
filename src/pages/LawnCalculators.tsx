@@ -1,170 +1,133 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { Calculator } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calculator, ArrowRight, Info } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const LawnCalculators: React.FC = () => {
-  const [length, setLength] = useState<number>(0);
-  const [width, setWidth] = useState<number>(0);
-  const [depth, setDepth] = useState<number>(2);
-  const [calculatorType, setCalculatorType] = useState<'sod' | 'mulch'>('sod');
+export default function LawnCalculators() {
+  const [length, setLength] = useState('');
+  const [width, setWidth] = useState('');
+  const [result, setResult] = useState(null);
 
-  const calculateSodArea = () => {
-    return length * width;
+  const calculateSodNeeded = (e) => {
+    e.preventDefault();
+    const area = parseFloat(length) * parseFloat(width);
+    const sodNeeded = Math.ceil(area * 1.1); // Adding 10% for waste
+    setResult(sodNeeded);
   };
-
-  const calculateMulchVolume = () => {
-    const cubicFeet = (length * width * depth) / 12;
-    const cubicYards = cubicFeet / 27;
-    return {
-      cubicFeet: cubicFeet.toFixed(2),
-      cubicYards: cubicYards.toFixed(2)
-    };
-  };
-
-  const memoizedCalculation = useMemo(() => {
-    return calculateSodArea();
-  }, [length, width]);
-
-  useEffect(() => {
-    const savedData = localStorage.getItem('calculatorData');
-    if (savedData) {
-      const { length, width, depth } = JSON.parse(savedData);
-      setLength(length);
-      setWidth(width);
-      setDepth(depth);
-    }
-  }, []);
 
   return (
     <>
       <SEO
-        title="Lawn Calculators - Sod and Mulch Estimator | Jax Sod"
-        description="Use our free lawn calculators to estimate sod square footage and mulch volume for your landscaping projects. Plan your lawn renovation with Jax Sod's tools."
-        canonicalUrl="/lawn-calculators"
+        title="Lawn Calculator | Estimate Sod Needed | Jacksonville Sod Installation"
+        description="Free lawn calculator to estimate sod needed for your Jacksonville property. Professional sod installation estimates and consultation available."
       />
-      <div className="bg-green-50 py-16">
+
+      <div className="bg-green-50 py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-8 flex items-center">
-            <Calculator className="mr-4" size={36} />
-            Lawn Calculators
-          </h1>
-          <p className="text-xl text-green-700 mb-8">
-            Use our free calculators to estimate the amount of sod or mulch you need for your landscaping project.
-          </p>
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-8 flex items-center">
+              <Calculator className="mr-4" size={36} />
+              Free Lawn Calculator
+            </h1>
 
-          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-            <div className="mb-4">
-              <label className="block text-green-700 font-semibold mb-2">Calculator Type</label>
-              <div className="flex space-x-4">
+            <div className="bg-white p-8 rounded-lg shadow-md mb-8">
+              <h2 className="text-2xl font-semibold text-green-800 mb-6">Calculate Sod Needed</h2>
+              
+              <form onSubmit={calculateSodNeeded} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Length (feet)
+                    </label>
+                    <input
+                      type="number"
+                      value={length}
+                      onChange={(e) => setLength(e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                      required
+                      min="1"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Width (feet)
+                    </label>
+                    <input
+                      type="number"
+                      value={width}
+                      onChange={(e) => setWidth(e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                      required
+                      min="1"
+                    />
+                  </div>
+                </div>
+                
                 <button
-                  className={`px-4 py-2 rounded ${calculatorType === 'sod' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-700'}`}
-                  onClick={() => setCalculatorType('sod')}
+                  type="submit"
+                  className="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition"
                 >
-                  Sod Calculator
+                  Calculate Square Footage
                 </button>
-                <button
-                  className={`px-4 py-2 rounded ${calculatorType === 'mulch' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-700'}`}
-                  onClick={() => setCalculatorType('mulch')}
-                >
-                  Mulch Calculator
-                </button>
-              </div>
-            </div>
+              </form>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block text-green-700 font-semibold mb-2" htmlFor="length">
-                  Length (feet)
-                </label>
-                <input
-                  type="number"
-                  id="length"
-                  className="w-full px-3 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  value={length}
-                  onChange={(e) => setLength(Number(e.target.value))}
-                />
-              </div>
-              <div>
-                <label className="block text-green-700 font-semibold mb-2" htmlFor="width">
-                  Width (feet)
-                </label>
-                <input
-                  type="number"
-                  id="width"
-                  className="w-full px-3 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  value={width}
-                  onChange={(e) => setWidth(Number(e.target.value))}
-                />
-              </div>
-            </div>
-
-            {calculatorType === 'mulch' && (
-              <div className="mb-4">
-                <label className="block text-green-700 font-semibold mb-2" htmlFor="depth">
-                  Depth (inches)
-                </label>
-                <input
-                  type="number"
-                  id="depth"
-                  className="w-full px-3 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  value={depth}
-                  onChange={(e) => setDepth(Number(e.target.value))}
-                />
-              </div>
-            )}
-
-            <div className="bg-green-100 p-4 rounded-md">
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Result:</h3>
-              {calculatorType === 'sod' ? (
-                <p className="text-green-700">
-                  You need approximately <strong>{memoizedCalculation} square feet</strong> of sod.
-                </p>
-              ) : (
-                <div>
-                  <p className="text-green-700">
-                    You need approximately:
+              {result && (
+                <div className="mt-6 p-4 bg-green-50 rounded-lg">
+                  <h3 className="font-semibold text-green-800 mb-2">Estimated Sod Needed:</h3>
+                  <p className="text-2xl font-bold text-green-600">{result} Square Feet</p>
+                  <p className="text-sm text-green-700 mt-2">
+                    *Includes 10% extra for cuts and waste
                   </p>
-                  <ul className="list-disc list-inside text-green-700">
-                    <li><strong>{calculateMulchVolume().cubicFeet} cubic feet</strong> of mulch</li>
-                    <li><strong>{calculateMulchVolume().cubicYards} cubic yards</strong> of mulch</li>
-                  </ul>
                 </div>
               )}
             </div>
-          </div>
 
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold text-green-800 mb-4">Tips for Accurate Measurements</h2>
-            <ul className="list-disc list-inside text-green-700 space-y-2">
-              <li>Measure the length and width of your lawn area in feet.</li>
-              <li>For irregular shapes, divide the area into rectangles and calculate each separately.</li>
-              <li>When ordering sod, add 5-10% extra to account for cuts and waste.</li>
-              <li>For mulch, a depth of 2-4 inches is typically recommended for most applications.</li>
-              <li>Consider ordering slightly more material than calculated to ensure full coverage.</li>
-            </ul>
-          </div>
+            <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+              <h2 className="text-2xl font-semibold text-green-800 mb-4">
+                Measurement Tips
+              </h2>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <Info className="text-green-600 mr-2 mt-1" size={20} />
+                  <span>Measure the length and width in feet</span>
+                </li>
+                <li className="flex items-start">
+                  <Info className="text-green-600 mr-2 mt-1" size={20} />
+                  <span>For irregular shapes, break into rectangles and add together</span>
+                </li>
+                <li className="flex items-start">
+                  <Info className="text-green-600 mr-2 mt-1" size={20} />
+                  <span>Include 10% extra for cuts and waste (automatically added)</span>
+                </li>
+                <li className="flex items-start">
+                  <Info className="text-green-600 mr-2 mt-1" size={20} />
+                  <span>Measure twice to ensure accuracy</span>
+                </li>
+              </ul>
+            </div>
 
-          <div className="mt-8 text-center">
-            <p className="text-xl text-green-700 mb-4">
-              Need professional help with your lawn project?
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300"
-            >
-              Contact Jax Sod for a Free Estimate
-            </a>
+            <div className="bg-green-800 text-white p-8 rounded-lg text-center">
+              <h2 className="text-3xl font-bold mb-4">Want Professional Help?</h2>
+              <p className="text-lg mb-6">
+                Get a precise measurement and free installation estimate from our team
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="tel:904-901-1457"
+                  className="bg-white text-green-800 px-8 py-3 rounded-lg inline-flex items-center justify-center hover:bg-green-100 transition"
+                >
+                  Call (904) 901-1457
+                </a>
+                <a
+                  href="/contact"
+                  className="bg-green-600 text-white px-8 py-3 rounded-lg inline-flex items-center justify-center hover:bg-green-700 transition"
+                >
+                  Request Free Estimate <ArrowRight className="ml-2" size={20} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
-};
-
-export default LawnCalculators;
-
-// Add input validation
-const validateInput = (value: string) => {
-  const num = parseFloat(value);
-  return !isNaN(num) && num >= 0 && num <= 10000;
-};
+}

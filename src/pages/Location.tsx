@@ -2,169 +2,117 @@ import React from 'react';
 import { MapPin, Sun, Cloud, Thermometer, Droplet } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const Location: React.FC = () => {
+export default function Location() {
   return (
     <>
       <SEO
-        title="Jax Sod Service Area - Jacksonville and St. Augustine Sod Installation"
-        description="Jax Sod provides expert sod installation services throughout Jacksonville, St. Augustine, and surrounding areas in Northeast Florida. Learn about our service area and local climate considerations for sod installation."
-        canonicalUrl="/location"
+        title="Sod Installation Jacksonville FL | Service Areas | Jax Sod"
+        description="Professional sod installation serving Jacksonville, St. Augustine, Ponte Vedra Beach, Orange Park & surrounding areas. Local experts in Florida sod installation."
       />
-      <div className="bg-green-50 py-16">
+
+      <div className="bg-green-50 py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-8 flex items-center">
-            <MapPin className="mr-4" size={36} />
-            Our Service Area
+          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-8">
+            Service Areas
           </h1>
-          <p className="text-xl text-green-700 mb-8">
-            Jax Sod proudly serves Jacksonville, St. Augustine, and the surrounding areas in Northeast Florida with expert sod installation services.
-          </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-2xl font-semibold text-green-800 mb-4">Primary Service Areas</h2>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Jacksonville
+                  Jacksonville - Full Service Coverage
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  St. Augustine
+                  St. Augustine - Complete Installation
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Ponte Vedra Beach
+                  Ponte Vedra Beach - Premium Services
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Orange Park
+                  Orange Park - Residential & Commercial
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Fleming Island
+                  Fleming Island - Full Coverage
                 </li>
               </ul>
             </div>
+
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-2xl font-semibold text-green-800 mb-4">Extended Service Areas</h2>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Fernandina Beach
+                  Mandarin - By Appointment
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Yulee
+                  Jacksonville Beach - Select Services
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Green Cove Springs
+                  Neptune Beach - Available
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Middleburg
+                  Atlantic Beach - Select Services
                 </li>
                 <li className="flex items-center">
                   <MapPin className="text-green-600 mr-2" size={20} />
-                  Palm Coast
+                  World Golf Village - By Request
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md mb-12">
-            <h2 className="text-2xl font-semibold text-green-800 mb-4">Local Climate Considerations for Sod Installation</h2>
+          <div className="bg-white p-8 rounded-lg shadow-md mb-12">
+            <h2 className="text-2xl font-semibold text-green-800 mb-4">Why Choose Local Installation?</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold text-green-700 mb-2 flex items-center">
-                  <Sun className="mr-2" size={20} />
-                  Sunlight
-                </h3>
-                <p>Jacksonville's abundant sunshine is ideal for most sod varieties, especially St. Augustine grass. We consider sun exposure when recommending the best sod type for your property.</p>
+              <div className="flex items-start">
+                <Sun className="text-yellow-500 mr-3 flex-shrink-0" size={24} />
+                <div>
+                  <h3 className="font-semibold mb-2">Local Climate Expertise</h3>
+                  <p>We understand Northeast Florida's unique climate challenges and soil conditions.</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-green-700 mb-2 flex items-center">
-                  <Thermometer className="mr-2" size={20} />
-                  Temperature
-                </h3>
-                <p>Our warm climate allows for year-round sod installation. We adjust our installation techniques and care instructions based on seasonal temperature variations.</p>
+              <div className="flex items-start">
+                <Cloud className="text-blue-500 mr-3 flex-shrink-0" size={24} />
+                <div>
+                  <h3 className="font-semibold mb-2">Weather-Smart Planning</h3>
+                  <p>Installation scheduled around optimal weather conditions for best results.</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-green-700 mb-2 flex items-center">
-                  <Droplet className="mr-2" size={20} />
-                  Rainfall
-                </h3>
-                <p>While Jacksonville receives ample rainfall, proper irrigation is crucial for new sod establishment. We provide detailed watering guidelines tailored to local weather patterns.</p>
+              <div className="flex items-start">
+                <Thermometer className="text-red-500 mr-3 flex-shrink-0" size={24} />
+                <div>
+                  <h3 className="font-semibold mb-2">Seasonal Timing</h3>
+                  <p>Strategic installation timing based on local growing seasons.</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-green-700 mb-2 flex items-center">
-                  <Cloud className="mr-2" size={20} />
-                  Humidity
-                </h3>
-                <p>High humidity can affect sod health. Our installation process and maintenance recommendations account for Jacksonville's humid conditions to prevent fungal issues.</p>
+              <div className="flex items-start">
+                <Droplet className="text-blue-500 mr-3 flex-shrink-0" size={24} />
+                <div>
+                  <h3 className="font-semibold mb-2">Local Water Requirements</h3>
+                  <p>Expert knowledge of regional irrigation needs and regulations.</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-green-800 mb-4">Why Choose Jax Sod for Your Area</h2>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="text-green-600 mr-3 flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold">Local Expertise</h3>
-                  <p>Our team has extensive knowledge of Northeast Florida's unique soil conditions and climate, ensuring optimal sod installation and growth.</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Sun className="text-green-600 mr-3 flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold">Climate-Adapted Solutions</h3>
-                  <p>We recommend and install sod varieties that thrive in Jacksonville's specific climate, considering factors like sun exposure, rainfall, and temperature fluctuations.</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Droplet className="text-green-600 mr-3 flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold">Custom Care Instructions</h3>
-                  <p>Each sod installation comes with tailored care guidelines that account for your property's unique characteristics and local weather patterns.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div className="mt-12 text-center">
-            <h2 className="text-3xl font-semibold text-green-800 mb-6">Ready to Transform Your Northeast Florida Lawn?</h2>
-            <p className="text-xl text-green-700 mb-8">Contact Jax Sod today for expert sod installation services tailored to your local area.</p>
-            <a href="/contact" className="bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300">
-              Get a Free Estimate
+          <div className="text-center bg-green-800 text-white p-8 rounded-lg">
+            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="mb-6">Contact us to schedule your free estimate</p>
+            <a href="tel:904-901-1457" className="bg-white text-green-800 px-8 py-3 rounded-lg inline-block hover:bg-green-100 transition">
+              Call (904) 901-1457
             </a>
           </div>
         </div>
       </div>
     </>
   );
-};
-
-export default Location;
-
-const locationSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Jax Sod",
-  "image": "https://www.jaxsod.com/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Jacksonville",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "30.3322",
-    "longitude": "-81.6557"
-  },
-  "url": "https://www.jaxsod.com",
-  "telephone": "+1-xxx-xxx-xxxx"
-};
+}

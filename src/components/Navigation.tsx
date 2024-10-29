@@ -14,6 +14,7 @@ const Navigation = () => {
             <Link to="/sod-types" className="hover:text-green-200">Sod Types</Link>
             <Link to="/lawn-calculators" className="hover:text-green-200">Calculators</Link>
             <Link to="/contact" className="hover:text-green-200">Contact</Link>
+            <Link to="/faq" className="hover:text-green-200">FAQ</Link> {/* Added FAQ link */}
           </div>
         </div>
       </div>

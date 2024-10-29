@@ -1,127 +1,179 @@
 import React from 'react';
-import { Sun, Cloud, Droplet, Leaf, Zap } from 'lucide-react';
+import { Sun, Cloud, Droplet, Shield, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const SodType: React.FC<{ title: string; icon: React.ReactNode; children: React.ReactNode }> = ({ title, icon, children }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-    <h2 className="text-2xl font-semibold text-green-700 mb-4 flex items-center">
-      {icon}
-      <span className="ml-2">{title}</span>
-    </h2>
-    {children}
-  </div>
-);
-
-const SodTypes: React.FC = () => {
+export default function SodTypes() {
   return (
     <>
       <SEO
-        title="Premium Sod Varieties Jacksonville FL | St Augustine, Zoysia, Bermuda | Jax Sod"
-        description="Expert sod installation in Jacksonville with premium grass varieties. Choose from St. Augustine Floratam, Zoysia, Bermuda & more. Get your perfect lawn today with Jax Sod's professional installation."
-        canonicalUrl="/sod-types"
-        schema={{
-          "@type": "Product",
-          "name": "Jacksonville Sod Installation",
-          "description": "Professional sod varieties and installation services",
-          "brand": "Jax Sod"
-        }}
+        title="Sod Varieties Jacksonville FL | St Augustine, Zoysia, Bermuda Sod"
+        description="Expert guide to sod varieties for Jacksonville lawns. St Augustine, Zoysia, and Bermuda sod installation. Find the perfect grass for your Florida yard."
       />
-      <div className="bg-green-50 py-16">
+
+      <div className="bg-green-50 py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-8">Sod Types</h1>
-          <p className="text-xl text-green-700 mb-8">
-            At Jax Sod, we offer a variety of sod types to suit different needs and conditions. Explore our selection to find the perfect grass for your lawn.
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-8">
+            Premium Sod Varieties for Jacksonville Lawns
+          </h1>
 
-          <SodType title="St. Augustine Floratam" icon={<Sun className="text-yellow-500" size={24} />}>
-            <p className="mb-4">St. Augustine Floratam is a popular choice for Florida lawns due to its excellent heat tolerance and dense growth. It thrives in full sun, needing 8 to 10 hours of sunlight daily.</p>
-            <h3 className="font-semibold mb-2">Benefits:</h3>
-            <ul className="list-disc list-inside mb-4">
-              <li>Thrives in Florida climate</li>
-              <li>Robust growth</li>
-              <li>Ideal for residential and commercial properties</li>
-            </ul>
-            <h3 className="font-semibold mb-2">Care Tips:</h3>
-            <ul className="list-disc list-inside mb-4">
-              <li>Water twice a week (20 minutes to an hour per zone)</li>
-              <li>Regular fertilization and mowing</li>
-            </ul>
-            <p className="font-semibold">Ideal For: Sunny areas with 8-10 hours of daily sunlight and proper irrigation.</p>
-          </SodType>
+          {/* St. Augustine Section */}
+          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 className="text-3xl font-bold text-green-800 mb-6">St. Augustine Sod</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <img 
+                  src="/images/st-augustine-sod.jpg" 
+                  alt="St Augustine Grass" 
+                  className="rounded-lg w-full h-64 object-cover mb-4"
+                />
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex items-center">
+                    <Sun className="text-yellow-500 mr-1" size={20} />
+                    <span>Partial to Full Sun</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Droplet className="text-blue-500 mr-1" size={20} />
+                    <span>Moderate Water</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Perfect for Florida Homes</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Excellent shade tolerance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Thrives in Jacksonville's climate</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Salt tolerant - great for coastal areas</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Dense, carpet-like appearance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-          <SodType title="Shade-Tolerant St. Augustine" icon={<Cloud className="text-gray-500" size={24} />}>
-            <p className="mb-4">Shade-tolerant St. Augustine is a hybrid variety that performs well in areas with 4 to 6 hours of sunlight, making it perfect for properties with partial shade.</p>
-            <h3 className="font-semibold mb-2">Benefits:</h3>
-            <ul className="list-disc list-inside mb-4">
-              <li>Thrives in partial shade</li>
-              <li>More drought-tolerant and bug-resistant</li>
-              <li>Increased resistance to cold</li>
-            </ul>
-            <p className="mb-4"><strong>Note:</strong> Cannot be matched with regular Floratam due to growth differences.</p>
-            <p className="font-semibold">Ideal For: Yards with partial shade and those seeking a versatile, all-around better sod option.</p>
-          </SodType>
+          {/* Zoysia Section */}
+          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 className="text-3xl font-bold text-green-800 mb-6">Zoysia Sod</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <img 
+                  src="/images/zoysia-sod.jpg" 
+                  alt="Zoysia Grass" 
+                  className="rounded-lg w-full h-64 object-cover mb-4"
+                />
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex items-center">
+                    <Sun className="text-yellow-500 mr-1" size={20} />
+                    <span>Full Sun to Light Shade</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Droplet className="text-blue-500 mr-1" size={20} />
+                    <span>Drought Resistant</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Premium Quality Grass</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Excellent drought tolerance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Fine texture and soft feel</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Good wear resistance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Low maintenance requirements</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-          <SodType title="Zoysia" icon={<Leaf className="text-green-500" size={24} />}>
-            <p className="mb-4">Zoysia is an excellent choice for areas where other grasses may struggle, particularly in shaded locations. It has an incredibly strong root system that allows it to thrive in various conditions.</p>
-            <h3 className="font-semibold mb-2">Benefits:</h3>
-            <ul className="list-disc list-inside mb-4">
-              <li>Thrives in partial shade</li>
-              <li>Dense growth that crowds out weeds</li>
-              <li>Requires less frequent mowing</li>
-            </ul>
-            <p className="mb-4"><strong>Installation Note:</strong> Must be laid in a staggered, zigzag pattern and rolled after installation.</p>
-            <p className="font-semibold">Ideal For: Shady areas, high-traffic zones, and areas needing tough, resilient grass with less maintenance.</p>
-          </SodType>
+          {/* Bermuda Section */}
+          <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+            <h2 className="text-3xl font-bold text-green-800 mb-6">Bermuda Sod</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <img 
+                  src="/images/bermuda-sod.jpg" 
+                  alt="Bermuda Grass" 
+                  className="rounded-lg w-full h-64 object-cover mb-4"
+                />
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex items-center">
+                    <Sun className="text-yellow-500 mr-1" size={20} />
+                    <span>Full Sun</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Cloud className="text-gray-500 mr-1" size={20} />
+                    <span>High Traffic Tolerant</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Athletic Turf Quality</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Excellent heat tolerance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Fast recovery from wear</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Perfect for sunny areas</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="text-green-600 mr-2 mt-1" size={20} />
+                    <span>Ideal for high-traffic areas</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-          <SodType title="Bermuda" icon={<Zap className="text-yellow-500" size={24} />}>
-            <p className="mb-4">Bermuda grass is a common choice for golf courses, athletic fields, and residential lawns due to its durability and resilience in high-traffic areas.</p>
-            <h3 className="font-semibold mb-2">Benefits:</h3>
-            <ul className="list-disc list-inside mb-4">
-              <li>Excellent drought tolerance</li>
-              <li>Thrives in full sun</li>
-              <li>Withstands heavy use</li>
-            </ul>
-            <p className="mb-4"><strong>Note:</strong> Requires full sun and doesn't do well in shady areas.</p>
-            <p className="font-semibold">Ideal For: High-traffic lawns, sports fields, and sunny areas.</p>
-          </SodType>
-
-          <SodType title="Bahia" icon={<Droplet className="text-blue-500" size={24} />}>
-            <p className="mb-4">Bahia grass is an excellent choice for areas where low maintenance is key. It's frequently used for common areas like medians, roadsides, and around ponds.</p>
-            <h3 className="font-semibold mb-2">Benefits:</h3>
-            <ul className="list-disc list-inside mb-4">
-              <li>No sprinkler system needed</li>
-              <li>Extremely hardy and resilient</li>
-              <li>Low maintenance</li>
-            </ul>
-            <p className="mb-4"><strong>Unique Feature:</strong> Can grow even if placed upside down!</p>
-            <p className="font-semibold">Ideal For: Low-maintenance areas that need to survive with minimal care, like roadsides or open spaces.</p>
-          </SodType>
-
-          <div className="mt-12 text-center">
-            <h2 className="text-3xl font-semibold text-green-800 mb-6">Need Help Choosing the Right Sod?</h2>
-            <p className="text-xl mb-8">Our experts can help you select the perfect sod type for your specific needs and conditions.</p>
-            <a href="/contact" className="bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300">
-              Get Expert Advice
-            </a>
+          {/* CTA Section */}
+          <div className="bg-green-800 text-white p-8 rounded-lg text-center">
+            <h2 className="text-3xl font-bold mb-4">Need Help Choosing?</h2>
+            <p className="text-xl mb-6">
+              Our experts will help you select the perfect sod variety for your property
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:904-901-1457"
+                className="bg-white text-green-800 px-8 py-3 rounded-lg inline-flex items-center justify-center hover:bg-green-100 transition"
+              >
+                Call (904) 901-1457
+              </a>
+              <a
+                href="/contact"
+                className="bg-green-600 text-white px-8 py-3 rounded-lg inline-flex items-center justify-center hover:bg-green-700 transition"
+              >
+                Get Free Consultation <ArrowRight className="ml-2" size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
-};
-
-export default SodTypes;
-
-const SodImage = ({ src, alt }: { src: string; alt: string }) => {
-  return (
-    <img
-      loading="lazy"
-      src={src}
-      alt={alt}
-      className="w-full h-auto rounded-lg"
-      onError={(e) => {
-        e.currentTarget.src = '/fallback-image.jpg';
-      }}
-    />
-  );
-};
+}
