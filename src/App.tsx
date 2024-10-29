@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -34,7 +33,6 @@ function App() {
         <Route path="/lawn-calculators" element={<LawnCalculators />} />
         <Route path="/sod-types" element={<SodTypes />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }

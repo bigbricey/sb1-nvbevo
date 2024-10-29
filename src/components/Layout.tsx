@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sprout, Menu, X, Phone, Calculator, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Sprout, Menu, X, Phone } from 'lucide-react';
+import Footer from './Footer';
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     closeMenu();
   }, [location]);
 
   const generateBreadcrumbs = () => {
-    const pathnames = location.pathname.split('/').filter((x) => x);
+    const pathnames = location.pathname.split('/').filter((x: string) => x);
     return (
       <nav className="text-sm mb-4" aria-label="Breadcrumb">
         <ol className="list-none p-0 inline-flex">
@@ -22,7 +27,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Link to="/" className="text-green-600 hover:text-green-800">Home</Link>
             {pathnames.length > 0 && <span className="mx-2">/</span>}
           </li>
-          {pathnames.map((name, index) => {
+          {pathnames.map((name: string, index: number) => {
             const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
             const isLast = index === pathnames.length - 1;
             return (
@@ -92,57 +97,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </nav>
         </div>
       )}
-      <main className="flex-grow">
-        <div className="container mx-auto px-4 py-4">
-          {generateBreadcrumbs()}
-          {children}
-        </div>
+      <main className="flex-grow container mx-auto px-4 py-4">
+        {generateBreadcrumbs()}
+        {children}
       </main>
-      <footer className="bg-green-800 text-white py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Jax Sod</h3>
-              <p>Your trusted sod installation experts in Jacksonville and St. Augustine for over 37 years.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link to="/" className="hover:text-green-200">Home</Link></li>
-                <li><Link to="/about" className="hover:text-green-200">About Us</Link></li>
-                <li><Link to="/services" className="hover:text-green-200">Sod Installation</Link></li>
-                <li><Link to="/location" className="hover:text-green-200">Service Area</Link></li>
-                <li><Link to="/contact" className="hover:text-green-200">Contact Us</Link></li>
-                <li><Link to="/faq" className="hover:text-green-200">FAQ</Link></li>
-                <li><Link to="/blog" className="hover:text-green-200">Blog</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-              <p>Jacksonville, FL</p>
-              <p className="flex items-center">
-                <Phone className="mr-2" size={16} />
-                <a href="tel:904-901-1457" className="hover:text-green-200">904-901-1457</a>
-              </p>
-              <p>Email: info@jaxsod.com</p>
-              <div className="flex space-x-4 mt-4">
-                <a href="https://www.facebook.com/jaxsod" target="_blank" rel="noopener noreferrer" className="hover:text-green-200">
-                  <Facebook size={24} />
-                </a>
-                <a href="https://www.instagram.com/jaxsod" target="_blank" rel="noopener noreferrer" className="hover:text-green-200">
-                  <Instagram size={24} />
-                </a>
-                <a href="https://www.twitter.com/jaxsod" target="_blank" rel="noopener noreferrer" className="hover:text-green-200">
-                  <Twitter size={24} />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 text-center">
-            <p>&copy; 2024 Jax Sod. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
