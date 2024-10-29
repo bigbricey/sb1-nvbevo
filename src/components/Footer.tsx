@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
-            <p>Phone: (904) 555-0123</p>
+            <p>Phone: (904) 901-1457</p>
             <p>Email: info@jaxsod.com</p>
             <p>Jacksonville & Green Cove Springs, FL</p>
           </div>
