@@ -1,5 +1,5 @@
 import React from 'react';
-import { Truck, Shovel, Droplet, CheckCircle, Ruler, Plant } from 'lucide-react';
+import { Truck, Shovel, Droplet, CheckCircle, Ruler } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
@@ -38,7 +38,6 @@ export default function Services() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <Plant className="text-green-600 h-12 w-12 mb-4" />
               <h2 className="text-2xl font-bold text-green-700 mb-4">Premium Sod Varieties</h2>
               <ul className="space-y-3">
                 <li className="flex items-start">
