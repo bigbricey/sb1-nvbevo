@@ -174,7 +174,7 @@ export default function Services() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-green-600 mr-3 mt-1" size={20} />
-                  <span>Fertilization and maintenance tips</span>
+                  <span>Initial care guidelines</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-green-600 mr-3 mt-1" size={20} />
@@ -197,24 +197,6 @@ export default function Services() {
                 </h3>
                 <p className="text-gray-700">
                   Ensure your lawn receives the right amount of water with our custom irrigation solutions.
-                </p>
-              </div>
-              {/* Lawn Maintenance */}
-              <div>
-                <h3 className="text-2xl font-semibold text-green-600 mb-2">
-                  Lawn Maintenance Services
-                </h3>
-                <p className="text-gray-700">
-                  Keep your lawn looking its best with our comprehensive maintenance programs.
-                </p>
-              </div>
-              {/* Sod Delivery */}
-              <div>
-                <h3 className="text-2xl font-semibold text-green-600 mb-2">
-                  Sod Delivery Services
-                </h3>
-                <p className="text-gray-700">
-                  Prefer to handle installation yourself? We offer prompt and reliable sod delivery.
                 </p>
               </div>
               {/* Free Consultation */}

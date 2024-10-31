@@ -143,55 +143,6 @@ export default function About() {
               </div>
             </section>
 
-            {/* Our Team */}
-            <section className="bg-white rounded-lg shadow-md p-8 mb-16">
-              <h2 className="text-4xl font-bold text-green-700 mb-8 text-center">
-                Meet Our Team
-              </h2>
-              <p className="text-gray-700 mb-8">
-                Our team of dedicated professionals is the backbone of Jax Sod. Each member brings a wealth of experience and a commitment to excellence.
-              </p>
-              {/* Team Members Grid */}
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* Team Member 1 */}
-                <div className="text-center">
-                  <img
-                    src="/images/team-member-1.jpg"
-                    alt="John Doe - Founder & CEO"
-                    className="w-40 h-40 mx-auto rounded-full mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-green-800">
-                    John Doe
-                  </h3>
-                  <p className="text-gray-700">Founder & CEO</p>
-                </div>
-                {/* Team Member 2 */}
-                <div className="text-center">
-                  <img
-                    src="/images/team-member-2.jpg"
-                    alt="Jane Smith - Operations Manager"
-                    className="w-40 h-40 mx-auto rounded-full mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-green-800">
-                    Jane Smith
-                  </h3>
-                  <p className="text-gray-700">Operations Manager</p>
-                </div>
-                {/* Team Member 3 */}
-                <div className="text-center">
-                  <img
-                    src="/images/team-member-3.jpg"
-                    alt="Mike Johnson - Lead Installer"
-                    className="w-40 h-40 mx-auto rounded-full mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-green-800">
-                    Mike Johnson
-                  </h3>
-                  <p className="text-gray-700">Lead Installer</p>
-                </div>
-              </div>
-            </section>
-
             {/* Customer Testimonials */}
             <section className="mb-16">
               <h2 className="text-4xl font-bold text-green-700 mb-8 text-center">

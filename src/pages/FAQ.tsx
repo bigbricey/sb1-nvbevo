@@ -121,7 +121,7 @@ const FAQ: React.FC = () => {
               Do you offer free estimates?
             </h3>
             <p className="text-gray-800 leading-relaxed">
-              Yes, we provide complimentary, no-obligation estimates for all sod installation projects. Schedule an on-site evaluation by calling us at <a href="tel:+1234567890" className="text-green-600 underline">(123) 456-7890</a> or filling out our <a href="/contact" className="text-green-600 underline">online contact form</a>.
+              Yes, we provide complimentary, no-obligation estimates for all sod installation projects. Schedule an on-site evaluation by calling us at <a href="tel:9049011457" className="text-green-600 underline">904-901-1457</a> or filling out our <a href="/contact" className="text-green-600 underline">online contact form</a>.
             </p>
           </div>
         </div>
