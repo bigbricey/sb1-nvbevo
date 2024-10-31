@@ -4,32 +4,33 @@ import {
   Phone,
   CheckCircle,
   Star,
-  Award,
-  Shield,
   Users,
   Sun,
-  Droplet,
-  MapPin,
+  Shield,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import SodCalculator from '../components/SodCalculator';
 
 export default function Home() {
   return (
     <>
       <SEO
-        title="Jacksonville's Premier Sod Installation Company | Jax Sod"
-        description="Professional sod installation services in Jacksonville, FL. Expert team offering premium Grade-A sod, soil preparation, and aftercare. Call (904) 901-1457 for a free estimate."
+        title="Sod Installation Jacksonville, FL | Jax Sod"
+        description="Top-rated sod installation services in Jacksonville, FL. Jax Sod offers premium sod varieties and expert installation. Call (904) 901-1457 for a free estimate."
       />
 
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <section className="text-center max-w-5xl mx-auto mb-20">
           <h1 className="text-5xl font-bold text-green-800 mb-8">
-            Transform Your Lawn with Jacksonville's Trusted Sod Experts
+            Jacksonville's Premier Sod Installation Services
           </h1>
           <p className="text-xl text-gray-700 mb-10">
-            Jax Sod provides professional sod installation services in Jacksonville, St. Augustine, and surrounding areas. We specialize in premium Grade-A sod varieties, ensuring a lush, green lawn that enhances your property's curb appeal.
+            Jax Sod is your trusted partner for professional sod installation in Jacksonville, FL. We specialize in premium Grade-A sod varieties, ensuring a lush, green lawn that enhances your property's curb appeal.
+          </p>
+          <p className="text-xl text-gray-700 mb-10">
+            Looking for sod installation near you? Contact us today!
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
@@ -47,6 +48,11 @@ export default function Home() {
               Call (904) 901-1457
             </a>
           </div>
+        </section>
+
+        {/* Sod Calculator Section */}
+        <section className="mb-20">
+          <SodCalculator />
         </section>
 
         {/* Why Choose Us Section */}
