@@ -138,10 +138,6 @@ export default function Home() {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <CheckCircle className="text-green-600 mr-3 mt-1" size={24} />
-                  Soil testing and pH balancing
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="text-green-600 mr-3 mt-1" size={24} />
                   Removal of old grass and weeds
                 </li>
                 <li className="flex items-start">
