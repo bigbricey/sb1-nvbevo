@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.jaxsod.com/sitemap.xml
+Sitemap: https://jaxsod.com/sitemap.xml
