@@ -247,3 +247,4 @@ export default function Home() {
                 </div>
                 <p className="text-gray-700 italic mb-6">
                   "Jax Sod transformed our property complete
+</p>
