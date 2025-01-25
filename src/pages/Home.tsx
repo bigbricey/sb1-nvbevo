@@ -242,7 +242,7 @@ export default function Home() {
                       key={i}
                       className="fill-current h-6 w-6"
                       aria-hidden="true"
-                    />
+                    /></div>
                   ))}
                 </div>
                 <p className="text-gray-700 italic mb-6">
