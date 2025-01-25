@@ -13,11 +13,42 @@ import SEO from '../components/SEO';
 import SodCalculator from '../components/SodCalculator';
 
 export default function Home() {
+  // Local Business schema for SEO
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Jax Sod',
+    url: 'https://www.jaxsod.com', // Update if your actual domain differs
+    telephone: '(904) 901-1457',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '1234 Lawn Ave', // Replace with your real address
+      addressLocality: 'Jacksonville',
+      addressRegion: 'FL',
+      postalCode: '32202', // Update if needed
+      addressCountry: 'US',
+    },
+    image: 'https://www.jaxsod.com/logo.png', // If you have a logo URL, otherwise remove this
+    priceRange: '$$',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '17:00',
+      },
+    ],
+  };
+
   return (
     <>
+      {/* Updated SEO component with extra props */}
       <SEO
         title="Sod Installation Jacksonville, FL | Jax Sod"
         description="Top-rated sod installation services in Jacksonville, FL. Jax Sod offers premium sod varieties and expert installation. Call (904) 901-1457 for a free estimate."
+        keywords="Sod installation, Jacksonville sod, Florida lawn care, St. Augustine sod, Zoysia sod, Bermuda sod"
+        canonical="https://www.jaxsod.com"
+        structuredData={JSON.stringify(localBusinessSchema)}
       />
 
       <main className="container mx-auto px-4 py-16">
@@ -37,14 +68,14 @@ export default function Home() {
               to="/contact"
               className="bg-green-600 text-white px-10 py-4 rounded-lg flex items-center justify-center hover:bg-green-700 transition"
             >
-              <ArrowRight className="mr-2 h-5 w-5" />
+              <ArrowRight className="mr-2 h-5 w-5" aria-hidden="true" />
               Get a Free Estimate
             </Link>
             <a
               href="tel:9049011457"
               className="bg-white text-green-600 border-2 border-green-600 px-10 py-4 rounded-lg flex items-center justify-center hover:bg-green-50 transition"
             >
-              <Phone className="mr-2 h-5 w-5" />
+              <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
               Call (904) 901-1457
             </a>
           </div>
@@ -63,7 +94,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Experienced Professionals */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <Users className="h-16 w-16 text-green-600 mx-auto mb-6" />
+              <Users
+                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                aria-hidden="true"
+              />
               <h3 className="text-2xl font-semibold text-green-800 mb-4">
                 Experienced Professionals
               </h3>
@@ -73,7 +107,10 @@ export default function Home() {
             </div>
             {/* Premium Sod Varieties */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <Sun className="h-16 w-16 text-green-600 mx-auto mb-6" />
+              <Sun
+                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                aria-hidden="true"
+              />
               <h3 className="text-2xl font-semibold text-green-800 mb-4">
                 Premium Sod Varieties
               </h3>
@@ -83,7 +120,10 @@ export default function Home() {
             </div>
             {/* Quality Guarantee */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <Shield className="h-16 w-16 text-green-600 mx-auto mb-6" />
+              <Shield
+                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                aria-hidden="true"
+              />
               <h3 className="text-2xl font-semibold text-green-800 mb-4">
                 Quality Guarantee
               </h3>
@@ -93,7 +133,10 @@ export default function Home() {
             </div>
             {/* Customer Satisfaction */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <Star className="h-16 w-16 text-green-600 mx-auto mb-6" />
+              <Star
+                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                aria-hidden="true"
+              />
               <h3 className="text-2xl font-semibold text-green-800 mb-4">
                 1000+ Happy Customers
               </h3>
@@ -120,15 +163,27 @@ export default function Home() {
               </p>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
-                  <CheckCircle className="text-green-600 mr-3 mt-1" size={24} />
+                  <CheckCircle
+                    className="text-green-600 mr-3 mt-1"
+                    size={24}
+                    aria-hidden="true"
+                  />
                   Proper soil preparation and grading
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-green-600 mr-3 mt-1" size={24} />
+                  <CheckCircle
+                    className="text-green-600 mr-3 mt-1"
+                    size={24}
+                    aria-hidden="true"
+                  />
                   Precise sod placement and fitting
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-green-600 mr-3 mt-1" size={24} />
+                  <CheckCircle
+                    className="text-green-600 mr-3 mt-1"
+                    size={24}
+                    aria-hidden="true"
+                  />
                   Post-installation care guidance
                 </li>
               </ul>
@@ -143,11 +198,19 @@ export default function Home() {
               </p>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
-                  <CheckCircle className="text-green-600 mr-3 mt-1" size={24} />
+                  <CheckCircle
+                    className="text-green-600 mr-3 mt-1"
+                    size={24}
+                    aria-hidden="true"
+                  />
                   Removal of old grass and weeds
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-green-600 mr-3 mt-1" size={24} />
+                  <CheckCircle
+                    className="text-green-600 mr-3 mt-1"
+                    size={24}
+                    aria-hidden="true"
+                  />
                   Adding nutrient-rich topsoil when necessary
                 </li>
               </ul>
@@ -159,7 +222,7 @@ export default function Home() {
               className="bg-green-600 text-white px-10 py-4 rounded-lg inline-flex items-center hover:bg-green-700 transition"
             >
               Learn More About Our Services
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
             </Link>
           </div>
         </section>
@@ -175,95 +238,12 @@ export default function Home() {
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <div className="flex text-yellow-400 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="fill-current h-6 w-6" />
+                    <Star
+                      key={i}
+                      className="fill-current h-6 w-6"
+                      aria-hidden="true"
+                    />
                   ))}
                 </div>
                 <p className="text-gray-700 italic mb-6">
-                  "Jax Sod transformed our property completely. Their team was professional, efficient, and the results exceeded our expectations."
-                </p>
-                <p className="text-gray-700 font-semibold">- Michael R., Jacksonville, FL</p>
-              </div>
-              {/* Testimonial 2 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="fill-current h-6 w-6" />
-                  ))}
-                </div>
-                <p className="text-gray-700 italic mb-6">
-                  "Best investment we've made in our home. The sod quality is excellent and their installation team was outstanding."
-                </p>
-                <p className="text-gray-700 font-semibold">- Sarah T., St. Augustine, FL</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="bg-green-800 text-white py-16 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Lawn?</h2>
-          <p className="text-xl mb-10">
-            Contact us today for a free estimate and let us bring your dream lawn to life.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <a
-              href="tel:9049011457"
-              className="bg-white text-green-800 px-10 py-4 rounded-lg font-semibold hover:bg-green-100 transition"
-            >
-              <Phone className="mr-2 h-5 w-5" />
-              Call Us at (904) 901-1457
-            </a>
-            <Link
-              to="/contact"
-              className="bg-white text-green-800 px-10 py-4 rounded-lg font-semibold hover:bg-green-100 transition flex items-center justify-center"
-            >
-              Get a Free Estimate
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        </section>
-
-        {/* Service Areas */}
-        <section className="py-16">
-          <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
-            Our Service Areas
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Map */}
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                title="Jax Sod Service Areas"
-                width="100%"
-                height="400"
-                frameBorder="0"
-                scrolling="no"
-                marginHeight={0}
-                marginWidth={0}
-                src="https://www.google.com/maps/d/embed?mid=1A1aBcDEFGHIJKL"
-              ></iframe>
-            </div>
-            {/* Service Area Details */}
-            <div className="flex flex-col justify-center">
-              <h3 className="text-3xl font-semibold text-green-800 mb-6">
-                Proudly Serving Northeast Florida
-              </h3>
-              <p className="text-gray-700 mb-4">
-                We offer our professional sod installation services in the following areas:
-              </p>
-              <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                <li>Jacksonville</li>
-                <li>St. Augustine</li>
-                <li>Orange Park</li>
-                <li>Ponte Vedra</li>
-                <li>And surrounding communities</li>
-              </ul>
-              <p className="text-gray-700 mt-6">
-                Don't see your area listed? Give us a call to see if we can serve your location.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
-  );
-}
+                  "Jax Sod transformed our property complete
