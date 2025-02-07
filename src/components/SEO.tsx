@@ -9,6 +9,21 @@ interface SEOProps {
   schema?: Record<string, unknown>;
 }
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LandscapingBusiness", 
+  "name": "Jax Sod",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jacksonville",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "description": "Professional sod installation services in Jacksonville, Florida",
+  "url": "https://jaxsod.com",
+  "areaServed": ["Jacksonville", "St. Augustine"]
+};
+
 const SEO: React.FC<SEOProps> = ({ title, description, canonicalUrl, ogImage, schema }) => {
   const siteUrl = 'https://www.jaxsod.com';
   const fullUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
@@ -124,6 +139,9 @@ const SEO: React.FC<SEOProps> = ({ title, description, canonicalUrl, ogImage, sc
       <meta name="ICBM" content="30.3322, -81.6557" />
 
       {/* Schema.org structured data */}
+      <script type="application/ld+json">
+        {JSON.stringify(localBusinessSchema)}
+      </script>
       <script type="application/ld+json">
         {JSON.stringify(localBusinessSchema)}
       </script>

@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 
 const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
-        ReactGA.initialize('UA-XXXXXXXXX-X'); // Replace with your Google Analytics tracking ID
+        ReactGA.initialize('G-XXXXXXXXXX'); // Replace with actual tracking ID
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
 
