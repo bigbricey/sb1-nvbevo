@@ -1,7 +1,63 @@
 import { BlogPost } from '../types';
 
 const blogPosts: BlogPost[] = [
-  // ... (previous blog posts remain unchanged)
+  {
+    id: "benefits-of-professional-lawn-care",
+    title: "The Benefits of Professional Lawn Care Services",
+    date: "2025-02-05",
+    description: "Discover why professional lawn care services are essential for maintaining a healthy, beautiful lawn in Jacksonville",
+    summary: "Learn about the key advantages of hiring professional lawn care services, from expert knowledge to time savings and consistent results.",
+    content: "Detailed content follows..."
+  },
+  {
+    id: "seasonal-lawn-care-checklist",
+    title: "Seasonal Lawn Care Checklist for Jacksonville, FL",
+    date: "2025-02-04",
+    description: "A comprehensive guide to year-round lawn maintenance in Jacksonville's unique climate",
+    summary: "Follow this seasonal checklist to keep your Jacksonville lawn healthy throughout the year with specific tasks for each season.",
+    content: "Detailed content follows..."
+  },
+  {
+    id: "common-lawn-problems-jacksonville",
+    title: "Common Lawn Problems in Jacksonville and How to Solve Them",
+    date: "2025-02-03",
+    description: "Solutions for typical lawn issues faced by Jacksonville homeowners",
+    summary: "Identify and address common lawn problems specific to Jacksonville's climate, from fungal diseases to pest infestations.",
+    content: "Detailed content follows..."
+  },
+  {
+    id: "choosing-right-grass-jacksonville",
+    title: "Choosing the Right Grass for Your Jacksonville Lawn",
+    date: "2025-02-02",
+    description: "Guide to selecting the best grass variety for your Jacksonville property",
+    summary: "Compare different grass types suitable for Jacksonville's climate and learn which variety best matches your lawn's conditions.",
+    content: "Detailed content follows..."
+  },
+  {
+    id: "sustainable-lawn-jacksonville",
+    title: "How to Create a Sustainable Lawn in Jacksonville",
+    date: "2025-02-01",
+    description: "Tips for maintaining an eco-friendly lawn in Jacksonville's climate",
+    summary: "Learn sustainable lawn care practices that conserve water, reduce chemical use, and maintain a healthy lawn ecosystem.",
+    content: "Detailed content follows..."
+  },
+  {
+    id: "jacksonville-watering-restrictions",
+    title: "Understanding Jacksonville's Watering Restrictions and Your Lawn",
+    date: "2025-01-31",
+    description: "Navigate Jacksonville's watering guidelines while maintaining a healthy lawn",
+    summary: "Stay compliant with local watering restrictions while keeping your lawn healthy with smart irrigation practices.",
+    content: "Detailed content follows..."
+  },
+  {
+    id: "soil-preparation-sod-installation",
+    title: "Preparing Your Soil for Sod Installation: A Step-by-Step Guide",
+    date: "2025-01-30",
+    description: "Complete guide to proper soil preparation before installing new sod",
+    summary: "Essential steps to prepare your soil for successful sod installation, ensuring strong root development and healthy growth.",
+    content: "Detailed content follows..."
+  },
+  // ... (existing blog posts follow)
 
   {
     id: 21,
