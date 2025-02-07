@@ -3,6 +3,11 @@ import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { blogPosts } from '../data/blogPosts';
+import { useMemo } from 'react';
+
+const sortedBlogPosts = useMemo(() => {
+  return [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}, [blogPosts]);
 
 export default function Blog() {
   return (
