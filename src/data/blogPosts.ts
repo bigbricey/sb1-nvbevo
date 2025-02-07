@@ -809,4 +809,63 @@ const blogPosts: BlogPost[] = [
   }
 ];
 
+export const blogPosts = [
+  ...existingPosts,
+  {
+    id: 26,
+    title: "The Benefits of Professional Lawn Care Services",
+    slug: "benefits-professional-lawn-care-services",
+    excerpt: "Discover why professional lawn care services are worth the investment. Learn about cost savings, expertise, and time benefits for Jacksonville homeowners.",
+    date: "2025-02-05",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 27,
+    title: "Spring Lawn Care Tips for Jacksonville Homeowners",
+    slug: "spring-lawn-care-tips-jacksonville",
+    excerpt: "Essential spring lawn care tips for Jacksonville residents. Learn how to prepare your lawn for the growing season.",
+    date: "2025-02-04",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 28,
+    title: "Common Lawn Pests in Jacksonville: Identification and Control",
+    slug: "common-lawn-pests-jacksonville",
+    excerpt: "Learn to identify and control common lawn pests in Jacksonville. Protect your lawn from damage with expert pest management tips.",
+    date: "2025-02-03",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 29,
+    title: "Organic Lawn Care Methods for Florida Yards",
+    slug: "organic-lawn-care-florida",
+    excerpt: "Discover eco-friendly lawn care methods suitable for Florida yards. Natural solutions for a healthy, sustainable lawn.",
+    date: "2025-02-02",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 30,
+    title: "How to Fix Patchy Grass in Your Jacksonville Lawn",
+    slug: "fix-patchy-grass-jacksonville",
+    excerpt: "Step-by-step guide to fixing bare and patchy spots in your Jacksonville lawn. Expert solutions for common grass problems.",
+    date: "2025-02-01",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 31,
+    title: "Year-Round Lawn Maintenance Schedule for Jacksonville",
+    slug: "year-round-lawn-maintenance-jacksonville",
+    excerpt: "Complete guide to maintaining your Jacksonville lawn throughout the year. Monthly tasks and seasonal care tips.",
+    date: "2025-01-31",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 32,
+    title: "Lawn Fertilization Guide for Jacksonville Homeowners",
+    slug: "lawn-fertilization-guide-jacksonville",
+    excerpt: "Learn when and how to fertilize your Jacksonville lawn. Expert tips on choosing and applying fertilizers for optimal results.",
+    date: "2025-01-30",
+    author: "Jax Sod Team"
+  }
+];
 export { blogPosts };
