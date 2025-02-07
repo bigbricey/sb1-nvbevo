@@ -8,6 +8,15 @@ export default function BlogPost() {
   const { slug } = useParams();
   const post = blogPosts.find(p => p.slug === slug);
 
+  const formattedDate = useMemo(() => {
+    if (!post) return '';
+    return new Date(post.date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  }, [post]);
+
   if (!post) {
     return <div>Post not found</div>;
   }

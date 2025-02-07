@@ -1,8 +1,62 @@
 import { BlogPost } from '../types';
 
 const blogPosts: BlogPost[] = [
-  // ... (previous blog posts remain unchanged)
-
+  {
+    id: 28,
+    title: "The Impact of Climate Change on Jacksonville Lawns",
+    slug: "climate-change-impact-jacksonville-lawns",
+    date: "2025-02-06",
+    seoDescription: "Learn how climate change affects lawn care in Jacksonville and discover adaptation strategies for maintaining a healthy lawn in changing conditions.",
+    content: `[HTML content for climate change impact post]`
+  },
+  {
+    id: 27,
+    title: "Organic Lawn Care Methods for Jacksonville Homes",
+    slug: "organic-lawn-care-jacksonville",
+    date: "2025-01-30",
+    seoDescription: "Explore eco-friendly and organic lawn care techniques suitable for Jacksonville's climate. Natural solutions for a healthy, sustainable lawn.",
+    content: `[HTML content for organic lawn care post]`
+  },
+  {
+    id: 26,
+    title: "Winter Lawn Care Tips for Jacksonville Homeowners",
+    slug: "winter-lawn-care-jacksonville",
+    date: "2025-01-23",
+    seoDescription: "Essential winter lawn care guide for Jacksonville residents. Learn how to protect and maintain your lawn during Florida's mild winter months.",
+    content: `[HTML content for winter lawn care post]`
+  },
+  {
+    id: 25,
+    title: "Common Lawn Diseases in Jacksonville: Identification and Treatment",
+    slug: "common-lawn-diseases-jacksonville",
+    date: "2025-01-16",
+    seoDescription: "Learn to identify and treat common lawn diseases affecting Jacksonville lawns. Expert tips for prevention and maintenance.",
+    content: `[HTML content for lawn diseases post]`
+  },
+  {
+    id: 24,
+    title: "Smart Irrigation Systems for Jacksonville Lawns",
+    slug: "smart-irrigation-systems-jacksonville",
+    date: "2025-01-09",
+    seoDescription: "Discover the benefits of smart irrigation systems for Jacksonville lawns. Compare options and learn about water-saving technologies.",
+    content: `[HTML content for smart irrigation post]`
+  },
+  {
+    id: 23,
+    title: "Pet-Friendly Lawn Care Guide for Jacksonville Homes",
+    slug: "pet-friendly-lawn-care-jacksonville",
+    date: "2025-01-02",
+    seoDescription: "Create and maintain a pet-friendly lawn in Jacksonville. Safe lawn care practices and tips for homes with pets.",
+    content: `[HTML content for pet-friendly lawn care post]`
+  },
+  {
+    id: 22,
+    title: "Native Plants for Jacksonville Lawns: A Comprehensive Guide",
+    slug: "native-plants-jacksonville-lawns",
+    date: "2024-12-26",
+    seoDescription: "Explore Florida native plants suitable for Jacksonville lawns. Benefits of native landscaping and implementation tips.",
+    content: `[HTML content for native plants post]`
+  },
   {
     id: 21,
     title: "The Best Time to Install Sod in Jacksonville: A Seasonal Guide",
