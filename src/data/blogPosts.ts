@@ -1,7 +1,178 @@
 import { BlogPost } from '../types';
 
 const blogPosts: BlogPost[] = [
-  // ... (previous blog posts remain unchanged)
+  {
+    id: 26,
+    title: "Winter Lawn Care Tips for Jacksonville Homeowners",
+    slug: "winter-lawn-care-tips-jacksonville",
+    date: "2025-02-05",
+    seoDescription: "Essential winter lawn care tips for Jacksonville homeowners. Learn how to protect and maintain your lawn during Florida's cooler months for a healthy spring growth.",
+    content: `
+        <div class="blog-summary">
+            While Jacksonville's winters are mild compared to northern regions, proper lawn care during the cooler months is crucial for maintaining a healthy yard. This guide provides essential tips for winter lawn maintenance in Northeast Florida.
+            
+            From adjusting watering schedules to managing potential frost damage, understanding winter lawn care helps ensure your grass remains healthy and ready for spring growth.
+        </div>
+        <div class="blog-details">
+            <h2>Adjusting Your Watering Schedule</h2>
+            <p>Winter in Jacksonville means reduced water needs for your lawn...</p>
+            
+            <h2>Protecting Against Frost</h2>
+            <p>While rare, Jacksonville can experience frost that affects lawn health...</p>
+            
+            <h2>Winter Fertilization</h2>
+            <p>Proper nutrient management during winter months is essential...</p>
+        </div>
+    `
+  },
+  {
+    id: 27,
+    title: "Dealing with Common Lawn Pests in Jacksonville",
+    slug: "dealing-common-lawn-pests-jacksonville",
+    date: "2025-01-29",
+    seoDescription: "Learn to identify and control common lawn pests in Jacksonville. Expert tips for preventing and treating pest infestations in Florida lawns naturally and effectively.",
+    content: `
+        <div class="blog-summary">
+            Lawn pests can quickly damage even the healthiest Jacksonville lawns. Understanding how to identify and control common pests is crucial for maintaining your lawn's health and appearance.
+            
+            This comprehensive guide covers identification, prevention, and treatment options for the most common lawn pests in Northeast Florida.
+        </div>
+        <div class="blog-details">
+            <h2>Common Jacksonville Lawn Pests</h2>
+            <p>From chinch bugs to armyworms, various pests can affect local lawns...</p>
+            
+            <h2>Natural Pest Control Methods</h2>
+            <p>Environmentally friendly approaches to pest management...</p>
+            
+            <h2>When to Call a Professional</h2>
+            <p>Signs that indicate professional pest control is needed...</p>
+        </div>
+    `
+  },
+  {
+    id: 28,
+    title: "Soil Preparation Guide for New Sod Installation",
+    slug: "soil-preparation-guide-new-sod",
+    date: "2025-01-22",
+    seoDescription: "Complete guide to preparing soil for sod installation in Jacksonville. Learn proper techniques for soil testing, amendment, and grading to ensure successful sod establishment.",
+    content: `
+        <div class="blog-summary">
+            Proper soil preparation is the foundation of successful sod installation. This guide covers everything you need to know about preparing your soil for new sod in Jacksonville's unique climate.
+            
+            Learn about soil testing, amendments, and proper grading techniques to ensure your new sod establishes quickly and thrives.
+        </div>
+        <div class="blog-details">
+            <h2>Understanding Your Soil</h2>
+            <p>The importance of soil testing and analysis...</p>
+            
+            <h2>Soil Amendment Techniques</h2>
+            <p>How to improve soil quality for optimal sod growth...</p>
+            
+            <h2>Proper Grading Methods</h2>
+            <p>Ensuring proper drainage through correct grading...</p>
+        </div>
+    `
+  },
+  {
+    id: 29,
+    title: "Year-Round Lawn Maintenance Schedule for Jacksonville",
+    slug: "year-round-lawn-maintenance-schedule",
+    date: "2025-01-15",
+    seoDescription: "Month-by-month lawn care guide for Jacksonville homeowners. Detailed maintenance schedule covering mowing, fertilization, and seasonal care throughout the year.",
+    content: `
+        <div class="blog-summary">
+            A successful lawn requires consistent care throughout the year. This comprehensive guide provides a month-by-month maintenance schedule specifically tailored for Jacksonville's climate.
+            
+            Follow this schedule to keep your lawn healthy and beautiful in every season.
+        </div>
+        <div class="blog-details">
+            <h2>Spring Maintenance (March-May)</h2>
+            <p>Essential tasks for spring lawn revival...</p>
+            
+            <h2>Summer Care (June-August)</h2>
+            <p>Managing your lawn during hot summer months...</p>
+            
+            <h2>Fall Preparation (September-November)</h2>
+            <p>Getting your lawn ready for cooler weather...</p>
+            
+            <h2>Winter Management (December-February)</h2>
+            <p>Maintaining lawn health during dormancy...</p>
+        </div>
+    `
+  },
+  {
+    id: 30,
+    title: "Drought-Resistant Landscaping in Jacksonville",
+    slug: "drought-resistant-landscaping-jacksonville",
+    date: "2025-01-08",
+    seoDescription: "Create a beautiful, drought-resistant landscape in Jacksonville. Expert tips on water-wise plant selection, efficient irrigation, and sustainable lawn care practices.",
+    content: `
+        <div class="blog-summary">
+            With increasing focus on water conservation, drought-resistant landscaping has become crucial in Jacksonville. This guide explores how to create and maintain a beautiful, water-efficient landscape.
+            
+            Learn about drought-tolerant grass varieties, efficient irrigation systems, and sustainable landscaping practices.
+        </div>
+        <div class="blog-details">
+            <h2>Choosing Drought-Tolerant Grasses</h2>
+            <p>Best grass varieties for water conservation...</p>
+            
+            <h2>Efficient Irrigation Systems</h2>
+            <p>Modern solutions for water-wise lawn care...</p>
+            
+            <h2>Sustainable Landscaping Practices</h2>
+            <p>Long-term strategies for water conservation...</p>
+        </div>
+    `
+  },
+  {
+    id: 31,
+    title: "Natural Lawn Care Methods for Jacksonville Homes",
+    slug: "natural-lawn-care-methods-jacksonville",
+    date: "2025-01-01",
+    seoDescription: "Discover eco-friendly lawn care methods for Jacksonville yards. Learn organic fertilization, natural pest control, and sustainable maintenance practices for a healthy lawn.",
+    content: `
+        <div class="blog-summary">
+            Natural lawn care methods are gaining popularity among Jacksonville homeowners. This guide explores organic and eco-friendly approaches to maintaining a beautiful lawn without harsh chemicals.
+            
+            Learn how to transition to natural lawn care while maintaining a healthy, vibrant yard.
+        </div>
+        <div class="blog-details">
+            <h2>Organic Fertilization Methods</h2>
+            <p>Natural alternatives to chemical fertilizers...</p>
+            
+            <h2>Natural Pest Control</h2>
+            <p>Eco-friendly solutions for common pests...</p>
+            
+            <h2>Sustainable Mowing Practices</h2>
+            <p>Environmental benefits of proper mowing...</p>
+        </div>
+    `
+  },
+  {
+    id: 32,
+    title: "Shade-Tolerant Grass Options for Jacksonville",
+    slug: "shade-tolerant-grass-options-jacksonville",
+    date: "2024-12-25",
+    seoDescription: "Find the perfect grass for shaded areas in Jacksonville. Compare shade-tolerant grass varieties and learn proper maintenance techniques for grass in low-light conditions.",
+    content: `
+        <div class="blog-summary">
+            Growing grass in shaded areas presents unique challenges for Jacksonville homeowners. This guide helps you choose and maintain the right grass varieties for areas with limited sunlight.
+            
+            Discover how to create a thriving lawn even in challenging shade conditions.
+        </div>
+        <div class="blog-details">
+            <h2>Best Grass Types for Shade</h2>
+            <p>Comparing shade-tolerant grass varieties...</p>
+            
+            <h2>Maintenance in Shaded Areas</h2>
+            <p>Special care requirements for shaded lawns...</p>
+            
+            <h2>Alternative Ground Covers</h2>
+            <p>Options for heavily shaded areas...</p>
+        </div>
+    `
+  },
+  // ... (existing blog posts)
 
   {
     id: 21,

@@ -15,29 +15,29 @@ import SodCalculator from '../components/SodCalculator';
 export default function Home() {
   // Local Business schema for SEO
   const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Jax Sod',
-    url: 'https://www.jaxsod.com', // Update if your actual domain differs
-    telephone: '(904) 901-1457',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '1234 Lawn Ave', // Replace with your real address
-      addressLocality: 'Jacksonville',
-      addressRegion: 'FL',
-      postalCode: '32202', // Update if needed
-      addressCountry: 'US',
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Jax Sod",
+    "url": "https://www.jaxsod.com",
+    "telephone": "(904) 901-1457",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1234 Lawn Ave",
+        "addressLocality": "Jacksonville",
+        "addressRegion": "FL",
+        "postalCode": "32202",
+        "addressCountry": "US"
     },
-    image: 'https://www.jaxsod.com/logo.png', // If you have a logo URL, otherwise remove this
-    priceRange: '$$',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '17:00',
-      },
-    ],
+    "image": "https://www.jaxsod.com/logo.png",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+        }
+    ]
   };
 
   return (
