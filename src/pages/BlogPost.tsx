@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
-import { blogPosts } from '../data/blogPosts';
+import { blogPosts } from '../data/blog-posts';
 import SEO from '../components/SEO';
 
 export default function BlogPost() {
@@ -16,7 +16,7 @@ export default function BlogPost() {
     <>
       <SEO
         title={`${post.title} | Jax Sod Blog`}
-        description={post.seoDescription}
+        description={post.excerpt}
       />
 
       <div className="bg-green-50 py-12">
@@ -34,7 +34,8 @@ export default function BlogPost() {
               
               <div className="flex items-center text-gray-600 mb-8">
                 <Calendar className="mr-2" size={20} />
-                {post.date}
+                <span className="mr-4">{post.date}</span>
+                <span>By {post.author}</span>
               </div>
 
               <div className="prose max-w-none" 

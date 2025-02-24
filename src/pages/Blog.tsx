@@ -2,7 +2,7 @@ import React from 'react';
 import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { blogPosts } from '../data/blogPosts';
+import { blogPosts } from '../data/blog-posts';
 
 export default function Blog() {
   return (
@@ -25,12 +25,13 @@ export default function Blog() {
                   <div className="flex items-center text-sm text-gray-500 mb-2">
                     <Calendar className="h-4 w-4 mr-1" />
                     <span className="mr-4">{post.date}</span>
+                    <span>By {post.author}</span>
                   </div>
                   <h2 className="text-xl font-semibold text-green-800 mb-2">
                     {post.title}
                   </h2>
                   <p className="text-gray-600 mb-4">
-                    {post.seoDescription}
+                    {post.excerpt}
                   </p>
                   <Link 
                     to={`/blog/${post.slug}`}
