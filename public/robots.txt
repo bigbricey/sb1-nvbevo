@@ -1,4 +1,21 @@
+# Allow all web crawlers to access all content
 User-agent: *
 Allow: /
 
+# Specify the sitemap locations
 Sitemap: https://www.jaxsod.com/sitemap.xml
+Sitemap: https://www.jaxsod.com/image-sitemap.xml
+
+# Prevent crawling of any temporary or development areas
+User-agent: *
+Disallow: /dev/
+Disallow: /temp/
+Disallow: /admin/
+
+# Crawl delay for Bing (in seconds)
+User-agent: Bingbot
+Crawl-delay: 10
+
+# Crawl delay for Yandex (in seconds)
+User-agent: Yandex
+Crawl-delay: 10

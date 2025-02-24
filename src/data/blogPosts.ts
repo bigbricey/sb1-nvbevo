@@ -806,6 +806,42 @@ const blogPosts: BlogPost[] = [
     `,
     date: "2024-05-19",
     author: "Jax Sod Team"
+  },
+  {
+    id: 26,
+    title: "Jacksonville Sod Installation Cost Guide",
+    slug: "jacksonville-sod-installation-cost-guide",
+    excerpt: "Discover the true cost of sod installation in Jacksonville, including price factors, different grass types, and how to get the best value for your investment.",
+    content: `<!-- Content is in the HTML file -->`,
+    date: "2023-08-15",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 27,
+    title: "Drought-Resistant Sod Options for Jacksonville Lawns",
+    slug: "drought-resistant-sod-options-jacksonville",
+    excerpt: "Discover the best drought-resistant sod varieties for Jacksonville's climate. Learn about water-efficient grass types that stay green with minimal irrigation.",
+    content: `<!-- Content is in the HTML file -->`,
+    date: "2023-09-22",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 28,
+    title: "Common Lawn Pests in Jacksonville: Identification and Treatment",
+    slug: "common-lawn-pests-jacksonville-identification-treatment",
+    excerpt: "Learn to identify and treat the most common lawn pests in Jacksonville, Florida. Protect your lawn from chinch bugs, armyworms, mole crickets, and more.",
+    content: `<!-- Content is in the HTML file -->`,
+    date: "2023-10-18",
+    author: "Jax Sod Team"
+  },
+  {
+    id: 29,
+    title: "Soil Preparation for Successful Sod Installation in Jacksonville",
+    slug: "soil-preparation-for-successful-sod-installation-jacksonville",
+    excerpt: "Learn the essential steps for proper soil preparation before installing sod in Jacksonville. Discover how to test, amend, and grade your soil for optimal sod establishment.",
+    content: `<!-- Content is in the HTML file -->`,
+    date: "2023-11-05",
+    author: "Jax Sod Team"
   }
 ];
 

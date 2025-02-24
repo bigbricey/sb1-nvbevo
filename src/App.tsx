@@ -11,17 +11,12 @@ import FAQ from './pages/FAQ';
 import Location from './pages/Location';
 import LawnCalculators from './pages/LawnCalculators';
 import SodTypes from './pages/SodTypes';
-import SEO from './components/SEO';
 import AnalyticsWrapper from './components/AnalyticsWrapper';
 
 function App() {
   return (
-    <AnalyticsWrapper>
-      <Router>
-        <SEO 
-          title="Jax Sod | Professional Sod Installation Jacksonville FL | Grade-A Sod Services"
-          description="Jacksonville's #1 sod installation experts. Licensed, insured, Grade-A sod varieties for Florida lawns. Free estimates, serving Jacksonville & St. Augustine. Call (904) 901-1457"
-        />
+    <Router>
+      <AnalyticsWrapper>
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,8 +30,8 @@ function App() {
           <Route path="/calculators" element={<LawnCalculators />} />
           <Route path="/sod-types" element={<SodTypes />} />
         </Routes>
-      </Router>
-    </AnalyticsWrapper>
+      </AnalyticsWrapper>
+    </Router>
   );
 }
 

@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Main Pages -->
   <url>
     <loc>https://www.jaxsod.com/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.jaxsod.com/about</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.jaxsod.com/services</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.jaxsod.com/sod-types</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -31,26 +32,100 @@
   </url>
   <url>
     <loc>https://www.jaxsod.com/contact</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.jaxsod.com/faq</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.jaxsod.com/blog</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.jaxsod.com/lawn-calculators</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/location</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/sod-installation-st-augustine</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/sod-services-orange-park</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.jaxsod.com/blog/best-time-install-sod-jacksonville-seasonal-guide</loc>
+    <lastmod>2024-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/sod-vs-seed-best-jacksonville-lawn</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/prepare-yard-sod-installation-jacksonville</loc>
+    <lastmod>2024-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/watering-new-sod-guide-jacksonville-homeowners</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/choosing-right-sod-variety-jacksonville-lawn</loc>
+    <lastmod>2024-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/jacksonville-sod-installation-cost-guide</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/drought-resistant-sod-options-jacksonville</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/common-lawn-pests-jacksonville-identification-treatment</loc>
+    <lastmod>2023-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.jaxsod.com/blog/soil-preparation-for-successful-sod-installation-jacksonville</loc>
+    <lastmod>2023-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

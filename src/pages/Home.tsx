@@ -11,45 +11,63 @@ import {
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import SodCalculator from '../components/SodCalculator';
+import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import Breadcrumbs from '../components/Breadcrumbs';
+import ReviewSchema from '../components/ReviewSchema';
 
 export default function Home() {
-  // Local Business schema for SEO
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Jax Sod',
-    url: 'https://www.jaxsod.com', // Update if your actual domain differs
-    telephone: '(904) 901-1457',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '1234 Lawn Ave', // Replace with your real address
-      addressLocality: 'Jacksonville',
-      addressRegion: 'FL',
-      postalCode: '32202', // Update if needed
-      addressCountry: 'US',
-    },
-    image: 'https://www.jaxsod.com/logo.png', // If you have a logo URL, otherwise remove this
-    priceRange: '$$',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '17:00',
-      },
-    ],
-  };
-
   return (
     <>
-      {/* Updated SEO component with extra props */}
+      {/* SEO component */}
       <SEO
         title="Sod Installation Jacksonville, FL | Jax Sod"
         description="Top-rated sod installation services in Jacksonville, FL. Jax Sod offers premium sod varieties and expert installation. Call (904) 901-1457 for a free estimate."
-        keywords="Sod installation, Jacksonville sod, Florida lawn care, St. Augustine sod, Zoysia sod, Bermuda sod"
-        canonical="https://www.jaxsod.com"
-        structuredData={JSON.stringify(localBusinessSchema)}
+        canonicalUrl="/"
       />
+      
+      {/* LocalBusiness Schema */}
+      <LocalBusinessSchema
+        type="LandscapeService"
+        name="Jax Sod"
+        telephone="904-901-1457"
+        description="Professional sod installation services in Jacksonville, FL. Expert team offering premium Grade-A sod, soil preparation, and lawn care services."
+        address={{
+          streetAddress: "PO Box 3",
+          addressLocality: "Green Cove Springs",
+          addressRegion: "FL",
+          postalCode: "32043",
+          addressCountry: "US"
+        }}
+        geo={{
+          latitude: 29.9919,
+          longitude: -81.6784
+        }}
+        areaServed={{
+          type: "GeoCircle",
+          geoMidpoint: {
+            latitude: 30.3322,
+            longitude: -81.6557
+          },
+          geoRadius: "50000"
+        }}
+        services={[
+          {
+            name: "Professional Sod Installation",
+            description: "Complete sod installation services including soil preparation and aftercare guidance"
+          },
+          {
+            name: "Soil Preparation Services",
+            description: "Professional soil preparation and grading for optimal sod growth"
+          }
+        ]}
+        aggregateRating={{
+          ratingValue: 4.9,
+          reviewCount: 150
+        }}
+      />
+      
+      {/* Breadcrumbs */}
+      <Breadcrumbs />
 
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
@@ -229,22 +247,80 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section className="bg-green-50 py-16 mb-20">
-          <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
-            What Our Customers Say
-          </h2>
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Testimonial 1 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="fill-current h-6 w-6"
-                      aria-hidden="true"
-                    /></div>
-                  ))}
+          <ReviewSchema
+            itemReviewed={{
+              name: "Jax Sod Installation Services",
+              image: "https://www.jaxsod.com/images/sod-installation.jpg",
+              description: "Professional sod installation services in Jacksonville, FL"
+            }}
+            reviews={[
+              {
+                author: "John D.",
+                datePublished: "2024-01-15",
+                reviewRating: 5,
+                reviewBody: "Jax Sod transformed our property completely. The team was professional, efficient, and the results exceeded our expectations. Our lawn looks amazing!"
+              },
+              {
+                author: "Sarah M.",
+                datePublished: "2024-02-20",
+                reviewRating: 5,
+                reviewBody: "We couldn't be happier with our new lawn. The quality of the sod and the installation was top-notch. The Jax Sod team was knowledgeable and helped us choose the perfect grass for our yard."
+              }
+            ]}
+            aggregateRating={{
+              ratingValue: 4.9,
+              reviewCount: 150
+            }}
+          >
+            <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
+              What Our Customers Say
+            </h2>
+            <div className="container mx-auto px-4">
+              <div className="grid md:grid-cols-2 gap-12">
+                {/* Testimonial 1 */}
+                <div className="bg-white p-8 rounded-lg shadow-lg">
+                  <div className="flex text-yellow-400 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="fill-current h-6 w-6"
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 italic mb-6">
+                    "Jax Sod transformed our property completely. The team was professional, efficient, and the results exceeded our expectations. Our lawn looks amazing!"
+                  </p>
+                  <div className="flex items-center">
+                    <div className="font-semibold text-green-800">John D.</div>
+                    <div className="text-gray-500 ml-2">Jacksonville, FL</div>
+                  </div>
                 </div>
-                <p className="text-gray-700 italic mb-6">
-                  "Jax Sod transformed our property complete
-</p>
+                
+                {/* Testimonial 2 */}
+                <div className="bg-white p-8 rounded-lg shadow-lg">
+                  <div className="flex text-yellow-400 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="fill-current h-6 w-6"
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 italic mb-6">
+                    "We couldn't be happier with our new lawn. The quality of the sod and the installation was top-notch. The Jax Sod team was knowledgeable and helped us choose the perfect grass for our yard."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="font-semibold text-green-800">Sarah M.</div>
+                    <div className="text-gray-500 ml-2">St. Augustine, FL</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ReviewSchema>
+        </section>
+      </main>
+    </>
+  );
+}

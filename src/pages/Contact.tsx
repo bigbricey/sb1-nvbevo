@@ -10,6 +10,7 @@ export default function Contact() {
     name: 'Jax Sod',
     url: 'https://www.jaxsod.com',
     logo: 'https://www.jaxsod.com/logo.jpg',
+    email: 'brice@jaxsod.com',
     sameAs: [
       'https://www.facebook.com/jaxsod',
       'https://www.instagram.com/jaxsod',
@@ -18,6 +19,7 @@ export default function Contact() {
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+1-904-901-1457',
+      email: 'brice@jaxsod.com',
       contactType: 'Customer Service',
     }
   };
@@ -64,8 +66,8 @@ export default function Contact() {
                       <Mail className="text-green-600 mr-4" size={24} />
                       <div>
                         <p className="font-semibold text-gray-800">Email</p>
-                        <a href="mailto:info@jaxsod.com" className="text-green-600 hover:text-green-700">
-                          info@jaxsod.com
+                        <a href="mailto:brice@jaxsod.com" className="text-green-600 hover:text-green-700">
+                          brice@jaxsod.com
                         </a>
                       </div>
                     </div>

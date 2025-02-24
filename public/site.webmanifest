@@ -1,0 +1,21 @@
+{
+  "name": "Jax Sod",
+  "short_name": "Jax Sod",
+  "description": "Professional sod installation services in Jacksonville, FL",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1a5d1a",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}

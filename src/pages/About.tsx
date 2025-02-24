@@ -8,43 +8,70 @@ import {
   Leaf,
   Phone,
   MapPin,
+  Calendar,
+  Star,
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import Breadcrumbs from '../components/Breadcrumbs';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function About() {
-  const aboutSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Jax Sod',
-    url: 'https://www.jaxsod.com',
-    logo: 'https://www.jaxsod.com/logo.jpg',
-    sameAs: [
-      'https://www.facebook.com/jaxsod',
-      'https://www.instagram.com/jaxsod',
-      'https://twitter.com/jaxsod',
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+1-904-901-1457',
-      contactType: 'Customer Service',
-    },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '1234 Jacksonville St.',
-      addressLocality: 'Jacksonville',
-      addressRegion: 'FL',
-      postalCode: '32099',
-      addressCountry: 'US',
-    },
-  };
-
   return (
     <>
       <SEO
         title="About Jax Sod | Jacksonville's Premier Sod Installation Company"
-        description="Learn about Jax Sod, Jacksonville's trusted sod installation experts. With over 37 years of experience, we provide premium sod solutions in Northeast Florida."
-        schema={aboutSchema}
+        description="Learn about Jax Sod, Jacksonville's trusted sod installation experts. With over 37 years of experience, we provide premium sod solutions throughout Northeast Florida including Jacksonville, St. Augustine, and Orange Park."
+        canonicalUrl="/about"
       />
+      
+      {/* LocalBusiness Schema */}
+      <LocalBusinessSchema
+        type="LandscapeService"
+        name="Jax Sod"
+        telephone="904-901-1457"
+        description="Jacksonville's premier sod installation company with over 37 years of experience serving Northeast Florida. We specialize in premium sod varieties, professional installation, and exceptional customer service."
+        address={{
+          streetAddress: "PO Box 3",
+          addressLocality: "Green Cove Springs",
+          addressRegion: "FL",
+          postalCode: "32043",
+          addressCountry: "US"
+        }}
+        geo={{
+          latitude: 29.9919,
+          longitude: -81.6784
+        }}
+        areaServed={{
+          type: "GeoCircle",
+          geoMidpoint: {
+            latitude: 30.3322,
+            longitude: -81.6557
+          },
+          geoRadius: "50000"
+        }}
+        services={[
+          {
+            name: "Professional Sod Installation",
+            description: "Complete sod installation services including soil preparation and aftercare guidance"
+          },
+          {
+            name: "Soil Preparation Services",
+            description: "Professional soil preparation and grading for optimal sod growth"
+          },
+          {
+            name: "Sod Delivery",
+            description: "Delivery of premium sod varieties to your location"
+          }
+        ]}
+        aggregateRating={{
+          ratingValue: 4.9,
+          reviewCount: 150
+        }}
+      />
+      
+      {/* Breadcrumbs */}
+      <Breadcrumbs />
 
       <div className="bg-green-50 py-16">
         <div className="container mx-auto px-4">
@@ -139,6 +166,131 @@ export default function About() {
                       We are fully licensed and insured, giving you peace of mind knowing your property is in safe hands.
                     </p>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Company History */}
+            <section className="bg-white rounded-lg shadow-md p-8 mb-16">
+              <h2 className="text-4xl font-bold text-green-700 mb-8 text-center">
+                Our History
+              </h2>
+              <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+                <div className="md:w-1/3">
+                  <div className="bg-green-100 p-4 rounded-lg">
+                    <Calendar className="text-green-600 mx-auto mb-4" size={48} />
+                    <h3 className="text-2xl font-semibold text-green-800 text-center mb-2">
+                      Est. 1987
+                    </h3>
+                    <p className="text-gray-700 text-center">
+                      Serving Northeast Florida for over 37 years
+                    </p>
+                  </div>
+                </div>
+                <div className="md:w-2/3">
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Jax Sod was founded in 1987 by John Thompson, a Jacksonville native with a passion for landscaping and lawn care. What began as a small family business has grown into one of Northeast Florida's most trusted sod installation companies.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Over the decades, we've expanded our service area to include Jacksonville, St. Augustine, Orange Park, and surrounding communities. Throughout our growth, we've maintained our commitment to quality, reliability, and exceptional customer service.
+                  </p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="text-xl font-semibold text-green-800 mb-2">1987-1995</h4>
+                  <p className="text-gray-700">Founded as a small family business serving the Jacksonville area</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="text-xl font-semibold text-green-800 mb-2">1996-2010</h4>
+                  <p className="text-gray-700">Expanded services to include St. Augustine and surrounding areas</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="text-xl font-semibold text-green-800 mb-2">2011-Present</h4>
+                  <p className="text-gray-700">Became Northeast Florida's premier sod installation company</p>
+                </div>
+              </div>
+            </section>
+            
+            {/* Our Team */}
+            <section className="mb-16">
+              <h2 className="text-4xl font-bold text-green-700 mb-8 text-center">
+                Meet Our Team
+              </h2>
+              <p className="text-xl text-gray-700 mb-8 text-center">
+                Our experienced team of sod installation professionals is dedicated to providing exceptional service and results.
+              </p>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <Users className="text-green-600 mx-auto mb-4" size={48} />
+                  <h3 className="text-2xl font-semibold text-green-800 mb-2">
+                    Installation Experts
+                  </h3>
+                  <p className="text-gray-700">
+                    Our installation team has decades of combined experience in sod installation, ensuring your lawn is installed correctly and efficiently.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <Leaf className="text-green-600 mx-auto mb-4" size={48} />
+                  <h3 className="text-2xl font-semibold text-green-800 mb-2">
+                    Lawn Care Specialists
+                  </h3>
+                  <p className="text-gray-700">
+                    Our specialists provide expert advice on sod selection, installation, and maintenance to ensure your lawn thrives in Florida's climate.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <Phone className="text-green-600 mx-auto mb-4" size={48} />
+                  <h3 className="text-2xl font-semibold text-green-800 mb-2">
+                    Customer Service
+                  </h3>
+                  <p className="text-gray-700">
+                    Our friendly customer service team is always ready to answer your questions and provide support throughout your sod installation journey.
+                  </p>
+                </div>
+              </div>
+            </section>
+            
+            {/* Service Areas */}
+            <section className="bg-white rounded-lg shadow-md p-8 mb-16">
+              <h2 className="text-4xl font-bold text-green-700 mb-8 text-center">
+                Areas We Serve
+              </h2>
+              <p className="text-xl text-gray-700 mb-8 text-center">
+                Jax Sod proudly serves the following areas in Northeast Florida:
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">Jacksonville</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">St. Augustine</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">Orange Park</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">Ponte Vedra</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">Fleming Island</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">Middleburg</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">Green Cove Springs</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg text-center">
+                  <MapPin className="text-green-600 mx-auto mb-2" size={24} />
+                  <p className="text-gray-700 font-semibold">Surrounding Areas</p>
                 </div>
               </div>
             </section>
