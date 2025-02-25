@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sprout, Menu, X, Phone } from 'lucide-react';
 import Footer from './Footer';
+import SearchBar from './SearchBar';
+import ScrollToTop from './ScrollToTop';
 
 interface Props {
   children: React.ReactNode;
@@ -54,10 +56,15 @@ const Layout = ({ children }: Props) => {
     <div className="min-h-screen flex flex-col">
       <header className="bg-green-600 text-white">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <Sprout size={32} />
-            <span className="text-2xl font-bold">Jax Sod</span>
-          </Link>
+          <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
+              <Sprout size={32} />
+              <span className="text-2xl font-bold">Jax Sod</span>
+            </Link>
+          </div>
+          <div className="hidden md:block w-1/3 mx-4">
+            <SearchBar />
+          </div>
           <nav className="hidden md:flex space-x-4 items-center">
             <Link to="/" className="hover:text-green-200">Home</Link>
             <Link to="/about" className="hover:text-green-200">About Us</Link>
@@ -80,6 +87,9 @@ const Layout = ({ children }: Props) => {
       </header>
       {isMenuOpen && (
         <div className="md:hidden bg-green-500 text-white">
+          <div className="container mx-auto px-4 py-2 mb-2">
+            <SearchBar />
+          </div>
           <nav className="container mx-auto px-4 py-2 flex flex-col">
             <Link to="/" className="py-2 hover:text-green-200">Home</Link>
             <Link to="/about" className="py-2 hover:text-green-200">About Us</Link>
@@ -101,6 +111,7 @@ const Layout = ({ children }: Props) => {
         {generateBreadcrumbs()}
         {children}
       </main>
+      <ScrollToTop />
       <Footer />
     </div>
   );

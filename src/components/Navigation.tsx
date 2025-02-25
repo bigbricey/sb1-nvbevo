@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +23,14 @@ const Navigation: React.FC = () => {
   return (
     <nav className="bg-green-600 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-xl font-bold">
-          Jax Sod
-        </Link>
+        <div className="flex items-center">
+          <Link to="/" className="text-white text-xl font-bold mr-4">
+            Jax Sod
+          </Link>
+          <div className="hidden lg:block w-64">
+            <SearchBar />
+          </div>
+        </div>
 
         {/* Hamburger Menu Button */}
         <button
@@ -66,6 +72,9 @@ const Navigation: React.FC = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden absolute top-16 left-0 right-0 bg-green-600 p-4 shadow-lg z-50">
+            <div className="mb-4">
+              <SearchBar />
+            </div>
             {navItems.map((item) => (
               <Link
                 key={item.path}
