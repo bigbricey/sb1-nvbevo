@@ -15,13 +15,14 @@ import SEO from '../components/SEO';
 import LocalBusinessSchema from '../components/LocalBusinessSchema';
 import Breadcrumbs from '../components/Breadcrumbs';
 import OptimizedImage from '../components/OptimizedImage';
+import ReviewSchema from '../components/ReviewSchema';
 
 export default function About() {
   return (
     <>
       <SEO
-        title="About Jax Sod | Jacksonville's Premier Sod Installation Company"
-        description="Learn about Jax Sod, Jacksonville's trusted sod installation experts. With over 37 years of experience, we provide premium sod solutions throughout Northeast Florida including Jacksonville, St. Augustine, and Orange Park."
+        title="About Jax Sod | 37+ Years of Expert Lawn Installation in Jacksonville"
+        description="Jacksonville's trusted sod experts since 1987. Serving Northeast Florida with premium grass varieties, expert installation, and exceptional customer service."
         canonicalUrl="/about"
       />
       
@@ -62,6 +63,33 @@ export default function About() {
           {
             name: "Sod Delivery",
             description: "Delivery of premium sod varieties to your location"
+          }
+        ]}
+        aggregateRating={{
+          ratingValue: 4.9,
+          reviewCount: 150
+        }}
+      />
+      
+      {/* Reviews Schema for Testimonials */}
+      <ReviewSchema
+        itemReviewed={{
+          name: "Jax Sod - Jacksonville Sod Installation Services",
+          description: "Professional sod installation services in Jacksonville, FL. Expert team offering premium Grade-A sod, soil preparation, and lawn care services.",
+          image: "https://www.jaxsod.com/images/jax-sod-logo.jpg"
+        }}
+        reviews={[
+          {
+            author: "Sarah W.",
+            datePublished: "2024-01-15",
+            reviewRating: 5,
+            reviewBody: "Jax Sod transformed our front yard into a beautiful green space. Their team was professional, efficient, and exceeded our expectations."
+          },
+          {
+            author: "David L.",
+            datePublished: "2024-02-20",
+            reviewRating: 5,
+            reviewBody: "We couldn't be happier with the quality of work provided by Jax Sod. They truly care about their customers and the results show it."
           }
         ]}
         aggregateRating={{
@@ -300,9 +328,32 @@ export default function About() {
               <h2 className="text-4xl font-bold text-green-700 mb-8 text-center">
                 What Our Customers Say
               </h2>
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center mb-2">
+                  <span className="text-amber-500 mr-2 text-xl font-bold">4.9</span>
+                  <div className="flex items-center">
+                    <Star className="text-amber-500 fill-amber-500 h-6 w-6" />
+                    <Star className="text-amber-500 fill-amber-500 h-6 w-6" />
+                    <Star className="text-amber-500 fill-amber-500 h-6 w-6" />
+                    <Star className="text-amber-500 fill-amber-500 h-6 w-6" />
+                    <Star className="text-amber-500 fill-amber-500 h-6 w-6 opacity-90" />
+                  </div>
+                </div>
+                <p className="text-gray-700">Based on 150+ customer reviews</p>
+              </div>
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Testimonial 1 */}
                 <div className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="flex text-amber-500">
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                    </div>
+                    <span className="ml-2 text-sm text-gray-500">January 2024</span>
+                  </div>
                   <p className="text-gray-700 italic">
                     "Jax Sod transformed our front yard into a beautiful green space. Their team was professional, efficient, and exceeded our expectations."
                   </p>
@@ -312,6 +363,16 @@ export default function About() {
                 </div>
                 {/* Testimonial 2 */}
                 <div className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="flex text-amber-500">
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                      <Star className="h-5 w-5 fill-amber-500" />
+                    </div>
+                    <span className="ml-2 text-sm text-gray-500">February 2024</span>
+                  </div>
                   <p className="text-gray-700 italic">
                     "We couldn't be happier with the quality of work provided by Jax Sod. They truly care about their customers and the results show it."
                   </p>
@@ -319,6 +380,11 @@ export default function About() {
                     - David L., St. Augustine, FL
                   </p>
                 </div>
+              </div>
+              <div className="text-center mt-8">
+                <a href="/reviews" className="text-green-600 hover:underline font-medium">
+                  Read more customer reviews →
+                </a>
               </div>
             </section>
 

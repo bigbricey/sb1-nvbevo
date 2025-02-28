@@ -5,7 +5,10 @@ import SEO from '../components/SEO';
 const Partnerships = () => {
     return (
         <Layout>
-            <SEO title="Partnership Opportunities" description="Explore partnership opportunities with JaxSod for mutual growth and backlink benefits." />
+            <SEO 
+                title="Lawn & Landscaping Business Partnerships | Jax Sod Jacksonville" 
+                description="Partner with Jacksonville's top sod company. Opportunities for landscapers, lawn care professionals, contractors & garden centers. Grow your business with Jax Sod." 
+            />
             <div className="container mx-auto px-4 py-8">
                 <h1 className="text-3xl font-bold mb-4">Partnership Opportunities</h1>
                 <p>At JaxSod, we believe in the power of community and collaboration. We are actively seeking partnerships with local businesses to create mutually beneficial relationships.</p>

@@ -2,6 +2,8 @@ import React from 'react';
 import { Phone, Mail } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
+import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Contact() {
   const contactSchema = {
@@ -27,9 +29,52 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact Jax Sod | Get Your Free Sod Installation Estimate"
-        description="Contact Jax Sod for professional sod installation services in Jacksonville and St. Augustine. Get your free estimate today!"
+        title="Contact Jax Sod | Free Lawn & Sod Installation Estimates in Jacksonville"
+        description="Get your free sod installation quote today! Serving Jacksonville, St. Augustine & Orange Park. Call (904) 901-1457 for expert lawn services & competitive pricing."
         schema={contactSchema}
+        canonicalUrl="/contact"
+      />
+      
+      {/* LocalBusiness Schema with contact details */}
+      <LocalBusinessSchema
+        type="LandscapeService"
+        name="Jax Sod - Contact Us"
+        telephone="904-901-1457"
+        description="Contact Jax Sod for professional sod installation services in Jacksonville, FL. Get a free estimate for your lawn transformation project."
+        address={{
+          streetAddress: "PO Box 3",
+          addressLocality: "Green Cove Springs",
+          addressRegion: "FL",
+          postalCode: "32043",
+          addressCountry: "US"
+        }}
+        geo={{
+          latitude: 29.9919,
+          longitude: -81.6784
+        }}
+        areaServed={{
+          type: "GeoCircle",
+          geoMidpoint: {
+            latitude: 30.3322,
+            longitude: -81.6557
+          },
+          geoRadius: "50000"
+        }}
+        openingHours={[
+          {
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "08:00",
+            closes: "17:00"
+          }
+        ]}
+      />
+      
+      {/* Breadcrumbs for better navigation and SEO */}
+      <Breadcrumbs 
+        customCrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' }
+        ]}
       />
 
       <div className="bg-green-50 py-16">

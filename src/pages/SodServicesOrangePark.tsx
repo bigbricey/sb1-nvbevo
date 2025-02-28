@@ -5,7 +5,10 @@ import SEO from '../components/SEO';
 const SodServicesOrangePark = () => {
     return (
         <Layout>
-            <SEO title="Sod Services in Orange Park" description="Expert sod services in Orange Park. Enhance your lawn with our professional sod solutions." />
+            <SEO 
+                title="Orange Park Sod Installation & Lawn Services | Jax Sod" 
+                description="Premium sod installation in Orange Park, FL. St. Augustine, Zoysia & Bermuda grass experts. Quality installation, competitive pricing & 5-star service." 
+            />
             <div className="container mx-auto px-4 py-8">
                 <h1 className="text-3xl font-bold mb-4">Sod Services in Orange Park</h1>
                 <p>Our professional sod services in Orange Park are designed to give you a beautiful, healthy lawn. Whether you need installation, maintenance, or repair, we have you covered.</p>

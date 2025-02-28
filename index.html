@@ -4,13 +4,33 @@
     <meta charset="UTF-8" />
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="Wnm-bygOB00tSa6gDG6qoUjjtBsUXmz92sYVnV8kEPA" />
-    <!-- TODO: Create and add a proper favicon set -->
+    
+    <!-- Performance Optimization: Cache Control -->
+    <meta http-equiv="Cache-Control" content="max-age=86400, public" />
+    
+    <!-- Resource Hints: DNS Prefetch and Preconnect for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.clarity.ms">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    
+    <!-- Favicons with dimension attributes for CLS prevention -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+    <meta name="theme-color" content="#1a5d1a" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" as="script" href="/src/main.tsx" type="module">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
     
     <!-- Primary Meta Tags -->
     <title>Jax Sod - Expert Sod Installation in Jacksonville and St. Augustine</title>
@@ -40,21 +60,78 @@
     <meta name="geo.position" content="30.3322;-81.6557" />
     <meta name="ICBM" content="30.3322, -81.6557" />
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Fonts with display=swap for better font loading performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    </noscript>
     
-    <!-- Clarity tracking code for https://jaxsod.com -->
-    <script>
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "osjftkk5rp");
+    <!-- Clarity tracking code for https://jaxsod.com with async loading -->
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "osjftkk5rp");
+            }, 3000); // Delay loading analytics by 3 seconds
+        });
     </script>
+    
+    <!-- Service Worker Registration -->
+    <script src="/register-sw.js" defer></script>
   </head>
   <body>
+    <!-- Inline critical CSS for faster First Contentful Paint -->
+    <style>
+      /* Critical CSS styles that appear above the fold */
+      body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      /* Online/Offline Status Indicator */
+      #online-status {
+        display: none;
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 9999;
+      }
+      
+      #online-status.online {
+        background-color: #10b981;
+        color: white;
+      }
+      
+      #online-status.offline {
+        background-color: #ef4444;
+        color: white;
+      }
+    </style>
+    
+    <!-- App root -->
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Online status indicator -->
+    <div id="online-status"></div>
+    
+    <!-- Main script with optimization attributes -->
+    <script type="module" src="/src/main.tsx" async></script>
+    
+    <!-- Non-critical styles moved to the end of the body -->
     <style>
       main {
         max-width: 1200px;

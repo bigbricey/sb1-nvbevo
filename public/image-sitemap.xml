@@ -2,39 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.jaxsod.com/services</loc>
-    <image:image>
-      <image:loc>https://www.jaxsod.com/images/bbb-rating.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.jaxsod.com/images/angies-list-super-service.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.jaxsod.com/images/houzz-badge.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.jaxsod.com/images/licensed-insured.png</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.jaxsod.com/</loc>
     <image:image>
       <image:loc>https://www.jaxsod.com/favicon.svg</image:loc>
+      <image:title>Favicon</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.jaxsod.com/favicon-32x32.png</image:loc>
+      <image:title>Favicon 32x32</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.jaxsod.com/favicon-16x16.png</image:loc>
+      <image:title>Favicon 16x16</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.jaxsod.com/apple-touch-icon.png</image:loc>
+      <image:title>Apple Touch Icon</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.jaxsod.com/android-chrome-512x512.png</image:loc>
+      <image:title>Android Chrome 512x512</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.jaxsod.com/android-chrome-192x192.png</image:loc>
+      <image:title>Android Chrome 192x192</image:title>
     </image:image>
   </url>
 </urlset>

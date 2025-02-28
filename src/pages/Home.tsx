@@ -20,8 +20,8 @@ export default function Home() {
     <>
       {/* SEO component */}
       <SEO
-        title="Sod Installation Jacksonville, FL | Jax Sod"
-        description="Top-rated sod installation services in Jacksonville, FL. Jax Sod offers premium sod varieties and expert installation. Call (904) 901-1457 for a free estimate."
+        title="Jacksonville Sod Installation & Lawn Services | Jax Sod"
+        description="Jacksonville's premier sod installation experts. Quality St. Augustine, Zoysia & Bermuda grass, affordable prices, 5-star service. Call (904) 901-1457 for a free quote."
         canonicalUrl="/"
       />
       
@@ -69,29 +69,29 @@ export default function Home() {
       {/* Breadcrumbs */}
       <Breadcrumbs />
 
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 py-8 md:py-16">
         {/* Hero Section */}
-        <section className="text-center max-w-5xl mx-auto mb-20">
-          <h1 className="text-5xl font-bold text-green-800 mb-8">
+        <section className="text-center max-w-5xl mx-auto mb-12 md:mb-20">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-800 mb-4 md:mb-8">
             Jacksonville's Premier Sod Installation Services
           </h1>
-          <p className="text-xl text-gray-700 mb-10">
+          <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-10">
             Jax Sod is your trusted partner for professional sod installation in Jacksonville, FL. We specialize in premium Grade-A sod varieties, ensuring a lush, green lawn that enhances your property's curb appeal.
           </p>
-          <p className="text-xl text-gray-700 mb-10">
+          <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-10">
             Looking for sod installation near you? Contact us today!
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
             <Link
               to="/contact"
-              className="bg-green-600 text-white px-10 py-4 rounded-lg flex items-center justify-center hover:bg-green-700 transition"
+              className="bg-green-600 text-white px-6 py-3 md:px-10 md:py-4 rounded-lg flex items-center justify-center hover:bg-green-700 transition text-base md:text-lg"
             >
               <ArrowRight className="mr-2 h-5 w-5" aria-hidden="true" />
               Get a Free Estimate
             </Link>
             <a
               href="tel:9049011457"
-              className="bg-white text-green-600 border-2 border-green-600 px-10 py-4 rounded-lg flex items-center justify-center hover:bg-green-50 transition"
+              className="bg-white text-green-600 border-2 border-green-600 px-6 py-3 md:px-10 md:py-4 rounded-lg flex items-center justify-center hover:bg-green-50 transition text-base md:text-lg"
             >
               <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
               Call (904) 901-1457
@@ -100,65 +100,65 @@ export default function Home() {
         </section>
 
         {/* Sod Calculator Section */}
-        <section className="mb-20">
+        <section className="mb-12 md:mb-20">
           <SodCalculator />
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="mb-20">
-          <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
+        <section className="mb-12 md:mb-20">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-700 text-center mb-8 md:mb-12">
             Why Choose Jax Sod?
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* Experienced Professionals */}
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg text-center">
               <Users
-                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                className="h-12 w-12 md:h-16 md:w-16 text-green-600 mx-auto mb-4 md:mb-6"
                 aria-hidden="true"
               />
-              <h3 className="text-2xl font-semibold text-green-800 mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-green-800 mb-2 md:mb-4">
                 Experienced Professionals
               </h3>
-              <p className="text-gray-700">
+              <p className="text-sm md:text-base text-gray-700">
                 Over 37 years of experience in providing top-quality sod installation services.
               </p>
             </div>
             {/* Premium Sod Varieties */}
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg text-center">
               <Sun
-                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                className="h-12 w-12 md:h-16 md:w-16 text-green-600 mx-auto mb-4 md:mb-6"
                 aria-hidden="true"
               />
-              <h3 className="text-2xl font-semibold text-green-800 mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-green-800 mb-2 md:mb-4">
                 Premium Sod Varieties
               </h3>
-              <p className="text-gray-700">
+              <p className="text-sm md:text-base text-gray-700">
                 Offering a range of Grade-A sod types like St. Augustine, Zoysia, and Bermuda.
               </p>
             </div>
             {/* Quality Guarantee */}
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg text-center">
               <Shield
-                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                className="h-12 w-12 md:h-16 md:w-16 text-green-600 mx-auto mb-4 md:mb-6"
                 aria-hidden="true"
               />
-              <h3 className="text-2xl font-semibold text-green-800 mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-green-800 mb-2 md:mb-4">
                 Quality Guarantee
               </h3>
-              <p className="text-gray-700">
+              <p className="text-sm md:text-base text-gray-700">
                 We stand by our work with a satisfaction guarantee on all installations.
               </p>
             </div>
             {/* Customer Satisfaction */}
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg text-center">
               <Star
-                className="h-16 w-16 text-green-600 mx-auto mb-6"
+                className="h-12 w-12 md:h-16 md:w-16 text-green-600 mx-auto mb-4 md:mb-6"
                 aria-hidden="true"
               />
-              <h3 className="text-2xl font-semibold text-green-800 mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-green-800 mb-2 md:mb-4">
                 1000+ Happy Customers
               </h3>
-              <p className="text-gray-700">
+              <p className="text-sm md:text-base text-gray-700">
                 Trusted by homeowners and businesses across Northeast Florida.
               </p>
             </div>

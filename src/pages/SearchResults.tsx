@@ -99,8 +99,8 @@ const SearchResults: React.FC = () => {
   return (
     <>
       <SEO
-        title={`Search Results for "${query}" | Jax Sod`}
-        description={`Search results for "${query}" on Jax Sod's blog about lawn care and sod installation in Jacksonville, FL.`}
+        title={`"${query}" | Lawn Care & Sod Installation Search Results | Jax Sod`}
+        description={`Find Jacksonville sod and lawn care information about "${query}". Expert advice, service details, and local sod installation resources from Jax Sod.`}
       />
 
       <div className="bg-green-50 py-12">

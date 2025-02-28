@@ -1,13 +1,65 @@
 import React from 'react';
 import { MapPin, Sun, Cloud, Thermometer, Droplet } from 'lucide-react';
 import SEO from '../components/SEO';
+import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Location() {
   return (
     <>
       <SEO
-        title="Sod Installation Jacksonville FL | Service Areas | Jax Sod"
-        description="Professional sod installation serving Jacksonville, St. Augustine, Ponte Vedra Beach, Orange Park & surrounding areas. Local experts in Florida sod installation."
+        title="Sod Installation Service Areas | Jacksonville, St. Augustine & Orange Park"
+        description="Local sod experts serving all of Northeast Florida: Jacksonville, St. Augustine, Ponte Vedra, Orange Park, Middleburg & Fleming Island. Call for service in your area."
+        canonicalUrl="/location"
+      />
+      
+      {/* LocalBusiness Schema with detailed service areas */}
+      <LocalBusinessSchema
+        type="LandscapeService"
+        name="Jax Sod - Service Areas"
+        telephone="904-901-1457"
+        description="Professional sod installation serving Jacksonville, St. Augustine, Ponte Vedra Beach, Orange Park and surrounding Northeast Florida areas. Local experts in Florida sod installation with complete service coverage."
+        address={{
+          streetAddress: "PO Box 3",
+          addressLocality: "Green Cove Springs",
+          addressRegion: "FL",
+          postalCode: "32043",
+          addressCountry: "US"
+        }}
+        geo={{
+          latitude: 29.9919,
+          longitude: -81.6784
+        }}
+        areaServed={{
+          type: "GeoShape",
+          polygon: "30.332,-81.656 30.186,-81.436 30.098,-81.312 29.884,-81.309 29.798,-81.625 30.031,-81.763 30.332,-81.656"
+        }}
+        services={[
+          {
+            name: "Jacksonville Sod Installation",
+            description: "Complete sod installation services throughout Jacksonville and surrounding neighborhoods."
+          },
+          {
+            name: "St. Augustine Sod Services",
+            description: "Premium sod installation services in St. Augustine and St. Augustine Beach areas."
+          },
+          {
+            name: "Ponte Vedra Beach Sod Installation",
+            description: "High-end sod installation for residential and commercial properties in Ponte Vedra Beach."
+          },
+          {
+            name: "Orange Park Sod Services",
+            description: "Professional sod installation and lawn renovation services in Orange Park."
+          }
+        ]}
+      />
+      
+      {/* Breadcrumbs for better navigation and SEO */}
+      <Breadcrumbs 
+        customCrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Service Areas', path: '/location' }
+        ]}
       />
 
       <div className="bg-green-50 py-12">

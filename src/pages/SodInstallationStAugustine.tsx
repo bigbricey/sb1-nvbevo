@@ -5,7 +5,10 @@ import SEO from '../components/SEO';
 const SodInstallationStAugustine = () => {
     return (
         <Layout>
-            <SEO title="Sod Installation in St. Augustine" description="Professional sod installation services in St. Augustine. Enhance your lawn with our expert services." />
+            <SEO 
+                title="St. Augustine Sod Installation & Lawn Services | Jax Sod" 
+                description="Expert sod installation in St. Augustine, FL. Premium grass varieties, professional installation, soil preparation & lawn renovation services. Free estimates." 
+            />
             <div className="container mx-auto px-4 py-8">
                 <h1 className="text-3xl font-bold mb-4">Sod Installation in St. Augustine</h1>
                 <p>Transform your lawn with our professional sod installation services in St. Augustine. Our team of experts ensures a lush, green lawn that enhances your property's curb appeal.</p>

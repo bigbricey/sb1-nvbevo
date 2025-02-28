@@ -5,6 +5,8 @@ import { ArrowRight } from 'lucide-react';
 import FAQ from '../components/FAQ';
 import Breadcrumbs from '../components/Breadcrumbs';
 import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import FAQPageSchema from '../components/FAQPageSchema';
+import BreadcrumbListSchema from '../components/BreadcrumbListSchema';
 
 export default function FAQPage() {
   // Installation FAQs
@@ -38,21 +40,54 @@ export default function FAQPage() {
       answer: "Regular watering, mowing, and fertilization are key to maintaining healthy sod. We provide detailed aftercare instructions to help you keep your lawn in top condition."
     }
   ];
+  
+  // Combine all FAQs for schema
+  const allFAQs = [...installationFAQs, ...maintenanceFAQs];
 
   return (
     <>
       <SEO
-        title="Frequently Asked Questions | Jax Sod"
-        description="Find answers to common questions about sod installation, maintenance, and services in Jacksonville, FL. Contact Jax Sod for more information."
+        title="Sod Installation FAQs | Cost, Timing & Maintenance | Jax Sod"
+        description="Expert answers about sod installation in Jacksonville: costs, best grass types, watering needs, installation times & lawn care. Get all your sod questions answered."
         canonicalUrl="/faq"
+      />
+      
+      {/* FAQ Page Schema */}
+      <FAQPageSchema 
+        faqs={allFAQs}
+        mainEntity={{
+          name: "Jax Sod",
+          description: "Professional sod installation services in Jacksonville, FL",
+          url: "https://www.jaxsod.com",
+          logo: "https://www.jaxsod.com/logo.png",
+          image: "https://www.jaxsod.com/images/jax-sod-team.jpg",
+          sameAs: [
+            "https://www.facebook.com/jaxsod",
+            "https://www.instagram.com/jaxsod",
+            "https://twitter.com/jaxsod"
+          ]
+        }}
+        pageUrl="https://www.jaxsod.com/faq"
+        datePublished="2023-01-15"
+        dateModified="2023-12-10"
+        keywords={[
+          "sod installation",
+          "sod maintenance",
+          "Jacksonville sod",
+          "lawn care",
+          "grass types",
+          "watering new sod",
+          "sod cost",
+          "sod FAQ"
+        ]}
       />
       
       {/* LocalBusiness Schema */}
       <LocalBusinessSchema
         type="LandscapeService"
-        name="Jax Sod"
+        name="Jax Sod - Jacksonville Sod Installation FAQs"
         telephone="904-901-1457"
-        description="Professional sod installation services in Jacksonville, FL."
+        description="Professional sod installation services in Jacksonville, FL. Find answers to all your questions about sod types, installation, and maintenance."
         address={{
           streetAddress: "PO Box 3",
           addressLocality: "Green Cove Springs",
@@ -64,49 +99,89 @@ export default function FAQPage() {
           latitude: 29.9919,
           longitude: -81.6784
         }}
+        areaServed={{
+          type: "GeoCircle",
+          geoMidpoint: {
+            latitude: 30.3322,
+            longitude: -81.6557
+          },
+          geoRadius: "50000"
+        }}
+      />
+      
+      {/* BreadcrumbList Schema */}
+      <BreadcrumbListSchema
+        items={[
+          { name: 'Home', item: 'https://www.jaxsod.com/' },
+          { name: 'FAQs', item: 'https://www.jaxsod.com/faq' }
+        ]}
       />
       
       {/* Breadcrumbs */}
       <Breadcrumbs />
 
       <main className="container mx-auto px-4 py-16">
-        <section className="text-center max-w-5xl mx-auto mb-20">
-          <h1 className="text-5xl font-bold text-green-800 mb-8">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xl text-gray-700 mb-10">
-            Get answers to the most common questions about sod installation, maintenance, and our services in Jacksonville, FL.
-          </p>
-        </section>
-
-        <section className="mb-20">
-          <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
-            Sod Installation FAQs
-          </h2>
-          <FAQ items={installationFAQs} />
-        </section>
-
-        <section className="mb-20">
-          <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
-            Sod Maintenance FAQs
-          </h2>
-          <FAQ items={maintenanceFAQs} />
-        </section>
-
-        {/* Call to Action */}
-        <section className="text-center py-16">
-          <h2 className="text-4xl font-bold text-green-700 mb-6">Need More Information?</h2>
-          <p className="text-xl text-gray-700 mb-10">
-            Contact us today to learn more about our sod installation and maintenance services.
-          </p>
-          <Link
-            to="/contact"
-            className="bg-green-600 text-white px-10 py-4 rounded-lg inline-flex items-center hover:bg-green-700 transition"
-          >
-            Get in Touch
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </section>
+        <h1 className="text-4xl font-bold text-green-800 mb-8 text-center">
+          Frequently Asked Questions
+        </h1>
+        
+        <div className="max-w-4xl mx-auto">
+          {/* Installation FAQs */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-green-700 mb-4">
+              Sod Installation
+            </h2>
+            <div className="border rounded-lg overflow-hidden">
+              {installationFAQs.map((faq, index) => (
+                <FAQ 
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isLast={index === installationFAQs.length - 1}
+                  showSchema={false}
+                />
+              ))}
+            </div>
+          </section>
+          
+          {/* Maintenance FAQs */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-green-700 mb-4">
+              Sod Maintenance
+            </h2>
+            <div className="border rounded-lg overflow-hidden">
+              {maintenanceFAQs.map((faq, index) => (
+                <FAQ 
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isLast={index === maintenanceFAQs.length - 1}
+                  showSchema={false}
+                />
+              ))}
+            </div>
+          </section>
+          
+          {/* Contact Banner */}
+          <div className="bg-green-800 text-white p-8 rounded-lg text-center mt-12">
+            <h2 className="text-2xl font-bold mb-4">Have More Questions?</h2>
+            <p className="mb-6">Our team is ready to help you with any additional questions</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:904-901-1457"
+                className="bg-white text-green-800 px-8 py-3 rounded-lg inline-flex items-center justify-center hover:bg-green-100 transition"
+              >
+                Call (904) 901-1457
+              </a>
+              <Link
+                to="/contact"
+                className="bg-green-600 text-white px-8 py-3 rounded-lg inline-flex items-center justify-center hover:bg-green-700 transition"
+              >
+                Contact Us <ArrowRight className="ml-2" size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   );

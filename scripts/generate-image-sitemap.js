@@ -22,8 +22,27 @@ const config = {
   outputPath: path.join(__dirname, '../public/image-sitemap.xml'),
   srcDir: path.join(__dirname, '../src'),
   publicDir: path.join(__dirname, '../public'),
-  imageExtensions: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'],
+  imageExtensions: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'avif'],
   excludePatterns: ['node_modules', 'dist', '.git']
+};
+
+// Common image titles for automatic title generation
+const commonImageNames = {
+  'logo': 'Jax Sod Official Logo',
+  'banner': 'Jax Sod Banner',
+  'hero': 'Jax Sod Hero Image',
+  'st-augustine': 'St Augustine Sod Grass',
+  'bermuda': 'Bermuda Sod Grass',
+  'zoysia': 'Zoysia Sod Grass',
+  'bahia': 'Bahia Sod Grass',
+  'centipede': 'Centipede Sod Grass',
+  'before-after': 'Sod Installation Before and After',
+  'installation': 'Professional Sod Installation',
+  'services': 'Jax Sod Professional Services',
+  'testimonial': 'Customer Testimonial',
+  'team': 'Jax Sod Team',
+  'location': 'Jax Sod Service Area',
+  'about': 'About Jax Sod'
 };
 
 // Find all image references in code files
@@ -36,16 +55,41 @@ async function findImageReferencesInCode() {
     ignore: config.excludePatterns
   });
   
-  // Regular expressions to find image references
+  // Regular expressions to find image references with possible alt text/title
   const patterns = [
-    // src="..." or src='...'
-    /src=["']([^"']+\.(jpg|jpeg|png|gif|webp|svg))["']/g,
+    // src="..." or src='...' with possible alt attribute
+    {
+      pattern: /src=["']([^"']+\.(jpg|jpeg|png|gif|webp|svg|avif))["'](?:[^>]*alt=["']([^"']*)["'])?/g,
+      pathIndex: 1,
+      titleIndex: 3
+    },
     // import ... from "..."
-    /from\s+["']([^"']+\.(jpg|jpeg|png|gif|webp|svg))["']/g,
+    {
+      pattern: /from\s+["']([^"']+\.(jpg|jpeg|png|gif|webp|svg|avif))["']/g,
+      pathIndex: 1
+    },
     // require("...")
-    /require\(["']([^"']+\.(jpg|jpeg|png|gif|webp|svg))["']\)/g,
+    {
+      pattern: /require\(["']([^"']+\.(jpg|jpeg|png|gif|webp|svg|avif))["']\)/g,
+      pathIndex: 1
+    },
     // url("...")
-    /url\(["']?([^"')]+\.(jpg|jpeg|png|gif|webp|svg))["']?\)/g
+    {
+      pattern: /url\(["']?([^"')]+\.(jpg|jpeg|png|gif|webp|svg|avif))["']?\)/g,
+      pathIndex: 1
+    },
+    // Next.js Image component
+    {
+      pattern: /<Image[^>]*src=["']([^"']+\.(jpg|jpeg|png|gif|webp|svg|avif))["'][^>]*alt=["']([^"']*)["']/g,
+      pathIndex: 1,
+      titleIndex: 3
+    },
+    // img element with title attribute
+    {
+      pattern: /<img[^>]*src=["']([^"']+\.(jpg|jpeg|png|gif|webp|svg|avif))["'][^>]*title=["']([^"']*)["']/g,
+      pathIndex: 1,
+      titleIndex: 3
+    }
   ];
   
   for (const file of codeFiles) {
@@ -53,10 +97,11 @@ async function findImageReferencesInCode() {
     const content = fs.readFileSync(filePath, 'utf8');
     const pageUrl = filePathToUrl(file);
     
-    for (const pattern of patterns) {
+    for (const { pattern, pathIndex, titleIndex } of patterns) {
       let match;
       while ((match = pattern.exec(content)) !== null) {
-        const imagePath = match[1];
+        const imagePath = match[pathIndex];
+        let imageTitle = titleIndex && match[titleIndex] ? match[titleIndex] : null;
         
         // Skip external URLs and data URIs
         if (imagePath.startsWith('http') || imagePath.startsWith('data:')) {
@@ -66,14 +111,40 @@ async function findImageReferencesInCode() {
         // Normalize path
         const normalizedPath = normalizePath(imagePath);
         
+        // Try to extract a meaningful title if none found
+        if (!imageTitle) {
+          // Extract filename without extension
+          const basename = path.basename(normalizedPath, path.extname(normalizedPath));
+          
+          // Check if matches any common patterns
+          for (const [key, title] of Object.entries(commonImageNames)) {
+            if (basename.toLowerCase().includes(key.toLowerCase())) {
+              imageTitle = title;
+              break;
+            }
+          }
+          
+          // Default to using filename if nothing else works
+          if (!imageTitle) {
+            imageTitle = basename.replace(/[-_]/g, ' ')
+                                 .replace(/\b\w/g, c => c.toUpperCase());
+          }
+        }
+        
         // Add to map with the page URL as the location
         if (!imageReferences.has(normalizedPath)) {
           imageReferences.set(normalizedPath, {
             path: normalizedPath,
+            title: imageTitle,
             locations: new Set([pageUrl])
           });
         } else {
-          imageReferences.get(normalizedPath).locations.add(pageUrl);
+          const existingRef = imageReferences.get(normalizedPath);
+          existingRef.locations.add(pageUrl);
+          // If we found a title and there wasn't one before, add it
+          if (imageTitle && !existingRef.title) {
+            existingRef.title = imageTitle;
+          }
         }
       }
     }
@@ -97,10 +168,29 @@ async function findImageFilesInPublic() {
   
   for (const file of files) {
     const imagePath = '/' + file.replace(/\\/g, '/');
+    const basename = path.basename(imagePath, path.extname(imagePath));
+    
+    // Try to generate a title from the filename
+    let imageTitle = null;
+    
+    // Check if matches any common patterns
+    for (const [key, title] of Object.entries(commonImageNames)) {
+      if (basename.toLowerCase().includes(key.toLowerCase())) {
+        imageTitle = title;
+        break;
+      }
+    }
+    
+    // Default to using filename if nothing else works
+    if (!imageTitle) {
+      imageTitle = basename.replace(/[-_]/g, ' ')
+                           .replace(/\b\w/g, c => c.toUpperCase());
+    }
     
     // Add to array
     imageFiles.push({
       path: imagePath,
+      title: imageTitle,
       locations: new Set(['/']) // Default to homepage
     });
   }
@@ -158,19 +248,28 @@ function generateImageSitemapXml(images) {
       if (!pageMap.has(location)) {
         pageMap.set(location, []);
       }
-      pageMap.get(location).push(image.path);
+      pageMap.get(location).push({
+        path: image.path,
+        title: image.title
+      });
     }
   }
   
   // Generate entries for each page
-  for (const [pageUrl, imagePaths] of pageMap.entries()) {
+  for (const [pageUrl, imagesForPage] of pageMap.entries()) {
     xml += '  <url>\n';
     xml += `    <loc>${config.baseUrl}${pageUrl}</loc>\n`;
     
     // Add each image
-    for (const imagePath of imagePaths) {
+    for (const image of imagesForPage) {
       xml += '    <image:image>\n';
-      xml += `      <image:loc>${config.baseUrl}${imagePath}</image:loc>\n`;
+      xml += `      <image:loc>${config.baseUrl}${image.path}</image:loc>\n`;
+      
+      // Add title if available
+      if (image.title) {
+        xml += `      <image:title>${image.title}</image:title>\n`;
+      }
+      
       xml += '    </image:image>\n';
     }
     
@@ -203,6 +302,11 @@ async function main() {
       // Merge locations
       for (const location of image.locations) {
         uniqueImages.get(key).locations.add(location);
+      }
+      
+      // Use title if we have one
+      if (image.title && !uniqueImages.get(key).title) {
+        uniqueImages.get(key).title = image.title;
       }
     }
   }

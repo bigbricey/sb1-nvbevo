@@ -6,4 +6,8 @@ export interface BlogPost {
   content: string;
   date: string;
   author: string;
+  category?: string;
+  tags?: string[];
+  image?: string;
+  lastModified?: string;
 }

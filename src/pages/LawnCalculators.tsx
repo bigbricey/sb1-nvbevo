@@ -3,6 +3,9 @@ import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card'
 import { Alert, AlertDescription } from '../components/ui/Alert';
 import { Calculator, Info } from 'lucide-react';
 import SEO from '../components/SEO';
+import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import BreadcrumbListSchema from '../components/BreadcrumbListSchema';
+import CalculatorApplicationSchema from '../components/CalculatorApplicationSchema';
 
 interface Results {
   totalArea: string;
@@ -211,12 +214,84 @@ export default function LawnCalculators() {
   return (
     <>
       <SEO
-        title="Lawn Calculators | Estimate Materials Needed | Jacksonville Sod Installation"
-        description="Free calculators to estimate sod, mulch, and topsoil needed for your Jacksonville property. Professional installation estimates available."
+        title="Free Sod Calculator | Estimate Your Jacksonville Lawn Size & Grass Needs"
+        description="Save money on your sod project with our free calculators. Accurately measure lawn size and determine exactly how much sod you need for your Jacksonville property."
+        canonicalUrl="/calculators"
       />
-      <div className="bg-green-50 py-12">
-        <div className="container mx-auto px-4">
-          <SodCalculator />
+      
+      {/* Calculator Application Schema */}
+      <CalculatorApplicationSchema
+        name="Jax Sod Lawn Calculator"
+        description="Free calculator tools to help you determine the amount of sod needed for your lawn based on measurements and waste factors."
+        url="https://www.jaxsod.com/calculators"
+        applicationCategory="CalculatorApplication"
+        offers={{
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/OnlineOnly"
+        }}
+        creator={{
+          name: "Jax Sod",
+          url: "https://www.jaxsod.com"
+        }}
+        datePublished="2022-06-15"
+      />
+      
+      {/* LocalBusiness Schema */}
+      <LocalBusinessSchema
+        type="LandscapeService"
+        name="Jax Sod"
+        telephone="904-901-1457"
+        description="Professional sod installation services in Jacksonville, FL. Use our free calculators to estimate the amount of sod needed for your lawn."
+        address={{
+          streetAddress: "PO Box 3",
+          addressLocality: "Green Cove Springs",
+          addressRegion: "FL",
+          postalCode: "32043",
+          addressCountry: "US"
+        }}
+        geo={{
+          latitude: 29.9919,
+          longitude: -81.6784
+        }}
+        areaServed={{
+          type: "GeoCircle",
+          geoMidpoint: {
+            latitude: 30.3322,
+            longitude: -81.6557
+          },
+          geoRadius: "50000"
+        }}
+      />
+      
+      {/* BreadcrumbList Schema */}
+      <BreadcrumbListSchema
+        items={[
+          { name: 'Home', item: 'https://www.jaxsod.com/' },
+          { name: 'Lawn Calculators', item: 'https://www.jaxsod.com/calculators' }
+        ]}
+      />
+
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold text-green-800 mb-8 text-center">
+          Lawn Calculators
+        </h1>
+        
+        <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto text-center">
+          Use our free calculators to estimate the amount of sod needed for your lawn and get accurate measurements for your project.
+        </p>
+        
+        <div className="max-w-4xl mx-auto">
+          <Card className="mb-12">
+            <CardHeader>
+              <CardTitle className="flex items-center text-green-800">
+                <Calculator className="mr-2" /> Sod Calculator
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <SodCalculator />
+            </CardContent>
+          </Card>
         </div>
       </div>
     </>

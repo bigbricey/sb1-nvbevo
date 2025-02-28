@@ -8,13 +8,74 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import Breadcrumbs from '../components/Breadcrumbs';
+import RelatedContent from '../components/RelatedContent';
+import useRelatedContent from '../hooks/useRelatedContent';
 
 export default function SodTypes() {
+  // Get related content for the SodTypes page
+  const relatedLinks = useRelatedContent();
+
   return (
     <>
       <SEO
-        title="Ultimate Guide to Sod Varieties in Jacksonville, FL | Jax Sod"
-        description="Discover the best sod types for your Jacksonville, FL lawn. Explore St. Augustine, Zoysia, Bermuda, and Bahia grass varieties with Jax Sod."
+        title="Best Sod Types for Jacksonville Lawns | St. Augustine, Zoysia & More"
+        description="Compare top sod varieties for Florida: St. Augustine, Zoysia, Bermuda & Bahia. Find drought-tolerant, shade-friendly & low-maintenance grass for your Jacksonville lawn."
+        canonicalUrl="/sod-types"
+      />
+      
+      {/* LocalBusiness Schema with service offerings */}
+      <LocalBusinessSchema
+        type="LandscapeService"
+        name="Jax Sod - Jacksonville Sod Varieties"
+        telephone="904-901-1457"
+        description="Jax Sod offers a variety of premium sod types for Jacksonville lawns, including St. Augustine, Zoysia, Bermuda, and Bahia grass. Our experts help you choose the perfect grass for your specific needs."
+        address={{
+          streetAddress: "PO Box 3",
+          addressLocality: "Green Cove Springs",
+          addressRegion: "FL",
+          postalCode: "32043",
+          addressCountry: "US"
+        }}
+        geo={{
+          latitude: 29.9919,
+          longitude: -81.6784
+        }}
+        areaServed={{
+          type: "GeoCircle",
+          geoMidpoint: {
+            latitude: 30.3322,
+            longitude: -81.6557
+          },
+          geoRadius: "50000"
+        }}
+        services={[
+          {
+            name: "St. Augustine Sod Installation",
+            description: "Installation of premium St. Augustine sod varieties including Floratam, Palmetto, and Bitter Blue."
+          },
+          {
+            name: "Zoysia Sod Installation",
+            description: "Installation of Zoysia sod varieties including Empire and Emerald, ideal for Jacksonville lawns."
+          },
+          {
+            name: "Bermuda Sod Installation",
+            description: "Installation of Bermuda grass sod varieties, perfect for high-traffic areas and full-sun locations."
+          },
+          {
+            name: "Bahia Sod Installation",
+            description: "Installation of Bahia sod, a low-maintenance option well-suited for Florida's climate."
+          }
+        ]}
+      />
+      
+      {/* Breadcrumbs for better navigation and SEO */}
+      <Breadcrumbs 
+        customCrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Sod Types', path: '/sod-types' }
+        ]}
       />
 
       <div className="bg-green-50 py-16">
@@ -417,6 +478,15 @@ export default function SodTypes() {
             *Last Updated: October 2023*
           </p>
         </div>
+      </div>
+
+      {/* Add related content near the bottom of the page, before any CTA */}
+      <div className="container mx-auto px-4 my-16">
+        <RelatedContent 
+          title="Related Resources" 
+          links={relatedLinks}
+          showCategories={true}
+        />
       </div>
     </>
   );
